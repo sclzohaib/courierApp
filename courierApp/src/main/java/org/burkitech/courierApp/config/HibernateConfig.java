@@ -17,13 +17,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = { "org.burkitech.courierApp.dto" })
 @EnableTransactionManagement
 public class HibernateConfig {
-	private final static String DATABASE_URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private final static String DATABASE_URL = "jdbc:oracle:thin:@192.168.100.5:1521:xe";
 	private final static String DATABASE_DRIVER = "oracle.jdbc.driver.OracleDriver";
-	private final static String DATABASE_USERNAME = "SPRINGOSS";
+	private final static String DATABASE_USERNAME = "COURIER_SYSTEM";
 	private final static String DATABASE_PASSWORD = "oracle";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.Oracle10gDialect";
 
-	// Data Source bean will be available 
+	// Data Source bean will be available
 	@Bean("dataSource")
 	public DataSource getDataSource() {
 		// Providing Database connection Information
@@ -42,7 +42,7 @@ public class HibernateConfig {
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		builder.addProperties(getHibernateProperties());
-		builder.scanPackages("org.burkitech.shoppingbackend.dto");
+		builder.scanPackages("org.burkitech.courierApp.dto");
 		return builder.buildSessionFactory();
 	}
 
