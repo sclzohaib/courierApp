@@ -52,4 +52,20 @@ public class PageController {
 
 	}
 
+	@RequestMapping(value = "/menifest")
+	public ModelAndView menifest() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Menifest");
+		mv.addObject("userClickMenifest", true);
+		return mv;
+
+	}
+	@RequestMapping(value = "/delivery")
+	public ModelAndView delivery() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Delivery");
+		mv.addObject("userClickDelivery", true);
+		return mv;
+
+	}
 }
