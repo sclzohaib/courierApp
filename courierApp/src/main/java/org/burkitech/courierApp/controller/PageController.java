@@ -4,7 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.burkitech.courierApp.dao.EmployeeDAO;
+import org.burkitech.courierApp.dao.ManifestDAO;
 import org.burkitech.courierApp.dto.Employee;
+import org.burkitech.courierApp.dto.Manifest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,9 @@ public class PageController {
 
 	@Autowired
 	private EmployeeDAO employeeDAO;
+	
+	@Autowired
+	private ManifestDAO manifestDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
@@ -146,22 +151,36 @@ public class PageController {
 			model.addAttribute("title", "Employee");
 			return "page";
 		}
-		// if (mEmployee.getId() == 0) {
-		// System.out.println(mEmployee.getName());
-		// // create a new record of product
+		System.out.println(mEmployee.getJoinDate());
 		employeeDAO.add(mEmployee);
-		// return "redirect:/employee";
-		// }
 		return "redirect:/employee";
 	}
 
-	@RequestMapping(value = "/manifest")
-	public ModelAndView menifest() {
+	@RequestMapping(value = "/manifest", method = RequestMethod.GET)
+	public ModelAndView manifest() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Manifest");
 		mv.addObject("userClickManifest", true);
+		Manifest nManifest = new Manifest();
+		mv.addObject("manifest", nManifest);
 		return mv;
+	}
 
+	@RequestMapping(value = "/manifest", method = RequestMethod.POST)
+	public String addManifest(@Valid @ModelAttribute("manifest") Manifest mManifest, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickManifest", true);
+			model.addAttribute("title", "Manifest");
+			return "page";
+		}
+		// if(mEmployee.getId()==0) {
+		// System.out.println(mEmployee.getName());
+		// // create a new record of product
+		manifestDAO.add(mManifest);
+		// return "redirect:/employee";
+		// }
+		return "redirect:/manifest";
 	}
 
 	@RequestMapping(value = "/delivery")

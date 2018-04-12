@@ -1,14 +1,11 @@
 <div class="container">
 	<h2>${title}</h2>
-
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a>
 		</li>
 		<li class="breadcrumb-item active">Forms</li>
 		<li class="breadcrumb-item active">Manifest</li>
 	</ol>
-
-
 	<form>
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
