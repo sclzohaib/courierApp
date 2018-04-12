@@ -12,12 +12,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "emp")
 public class Employee {
-
+	// 1
 	@Id
 	@Column(name = "emp_id")
 	private String id;
 
-	@NotBlank(message = "Please enter the Product Name!")
+	@NotBlank(message = "Please enter the Employee Name!")
 	@Column(name = "emp_name")
 	private String name;
 
