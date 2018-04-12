@@ -52,7 +52,7 @@
 		<%@include file="employee.jsp"%>
 	</c:if>
 	<c:if test="${userClickMenifest==true}">
-		<%@include file="menifest.jsp"%>
+		<%@include file="manifest.jsp"%>
 	</c:if>
 	<c:if test="${userClickDelivery==true}">
 		<%@include file="delivery.jsp"%>

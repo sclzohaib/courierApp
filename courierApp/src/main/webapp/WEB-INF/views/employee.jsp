@@ -7,6 +7,7 @@
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 				${message}
 			</div>
+		</div>
 	</c:if>
 
 	<sf:form modelAttribute="employee" action="${contextRoot}/employee"
@@ -20,7 +21,8 @@
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
 				<label for="joinDate">Joining date</label>
-				<sf:input type="date" class="form-control" id="joinDate" path="joinDate"/>
+				<sf:input type="date" class="form-control" id="joinDate"
+					path="joinDate" />
 			</div>
 		</div>
 		<div class="form-row">

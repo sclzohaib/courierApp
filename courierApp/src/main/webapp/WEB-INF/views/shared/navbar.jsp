@@ -38,7 +38,7 @@
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownPortfolio">
 						<a class="dropdown-item" href="${contextRoot}/employee">Employee</a>
-						<a class="dropdown-item" href="${contextRoot}/menifest">Menifest</a>
+						<a class="dropdown-item" href="${contextRoot}/manifest">Manifest</a>
 						<a class="dropdown-item" href="${contextRoot}/delivery">Delivery</a>
 					</div></li>
 
