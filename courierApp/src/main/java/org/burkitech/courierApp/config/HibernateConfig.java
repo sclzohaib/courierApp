@@ -1,5 +1,4 @@
 package org.burkitech.courierApp.config;
-
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -17,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = { "org.burkitech.courierApp.dto" })
 @EnableTransactionManagement
 public class HibernateConfig {
-	private final static String DATABASE_URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private final static String DATABASE_URL = "jdbc:oracle:thin:@192.168.100.16:1521:xe";
 	private final static String DATABASE_DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private final static String DATABASE_USERNAME = "COURIER";
 	private final static String DATABASE_PASSWORD = "oracle";

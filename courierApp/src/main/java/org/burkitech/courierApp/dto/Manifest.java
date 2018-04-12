@@ -30,7 +30,7 @@ public class Manifest {
 	
 	@Column(name = "m_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date date;
+	private Date mdate;
 	
 	@Column(name = "vehicle_no")
 	private long vehicleNo;
@@ -88,11 +88,11 @@ public class Manifest {
 	}
 
 	public Date getDate() {
-		return date;
+		return mdate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(Date mdate) {
+		this.mdate = mdate;
 	}
 
 	public long getVehicleNo() {

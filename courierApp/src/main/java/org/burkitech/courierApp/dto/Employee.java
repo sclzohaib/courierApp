@@ -13,16 +13,25 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "emp")
 public class Employee {
 
+	@Id
 	@Column(name = "emp_id")
 	private String id;
 
-	@NotBlank(message = "Please enter the Product Name!")
+	@NotBlank(message = "Please enter the Employee Name!")
 	@Column(name = "emp_name")
 	private String name;
 
 	@Column(name = "emp_joining")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date joinDate;
+
+	public Date getJoinDate() {
+		return joinDate;
+	}
+
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
+	}
 
 	@NotBlank(message = "Please enter the route!")
 	@Column(name = "rut_no")
@@ -47,13 +56,13 @@ public class Employee {
 		this.name = name;
 	}
 
-	public Date getJoinDate() {
-		return joinDate;
-	}
+	// public String getDate() {
+	// return joinDate;
+	// }
 
-	void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
-	}
+	// public void setDate(String joinDate) {
+	// this.joinDate = joinDate;
+	// }
 
 	public String getRoute() {
 		return route;

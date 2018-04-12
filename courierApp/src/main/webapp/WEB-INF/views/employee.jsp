@@ -7,7 +7,6 @@
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 				${message}
 			</div>
-		</div>
 	</c:if>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
