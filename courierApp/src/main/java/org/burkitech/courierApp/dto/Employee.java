@@ -15,7 +15,7 @@ public class Employee {
 
 	@Id
 	@Column(name = "emp_id")
-	private int id;
+	private String id;
 
 	@NotBlank(message = "Please enter the Product Name!")
 	@Column(name = "emp_name")
@@ -36,15 +36,15 @@ public class Employee {
 	@NotBlank(message = "Please enter the route!")
 	@Column(name = "rut_no")
 	private String route;
-	
+
 	@Column(name = "city_no")
 	private String city;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -56,13 +56,13 @@ public class Employee {
 		this.name = name;
 	}
 
-//	public String getDate() {
-//		return joinDate;
-//	}
+	// public String getDate() {
+	// return joinDate;
+	// }
 
-//	public void setDate(String joinDate) {
-//		this.joinDate = joinDate;
-//	}
+	// public void setDate(String joinDate) {
+	// this.joinDate = joinDate;
+	// }
 
 	public String getRoute() {
 		return route;

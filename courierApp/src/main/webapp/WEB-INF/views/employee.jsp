@@ -8,9 +8,21 @@
 				${message}
 			</div>
 	</c:if>
-
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
+		<li class="breadcrumb-item active">Forms</li>
+		<li class="breadcrumb-item active">Employee</li>
+	</ol>
 	<sf:form modelAttribute="employee" action="${contextRoot}/employee"
 		method="POST">
+
+		<div class="form-row">
+			<div class="col-md-4 mb-3">
+				<label for="name">ID</label>
+				<sf:input type="text" class="form-control" id="id" path="id" />
+			</div>
+		</div>
+
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
 				<label for="name">Name</label>
@@ -20,7 +32,8 @@
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
 				<label for="joinDate">Joining date</label>
-				<sf:input type="date" class="form-control" id="joinDate" path="joinDate"/>
+				<sf:input type="date" class="form-control" id="joinDate"
+					path="joinDate" />
 			</div>
 		</div>
 		<div class="form-row">

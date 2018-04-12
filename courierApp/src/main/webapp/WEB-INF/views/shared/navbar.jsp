@@ -22,12 +22,13 @@
 					aria-haspopup="true" aria-expanded="false"> Portfolio </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownPortfolio">
-						<a class="dropdown-item" href="portfolio-1-col.html">1 Column
-							Portfolio</a> <a class="dropdown-item" href="portfolio-2-col.html">2
+						<a class="dropdown-item" href="${contextRoot}/portfolio-1-col">1
 							Column Portfolio</a> <a class="dropdown-item"
-							href="portfolio-3-col.html">3 Column Portfolio</a> <a
-							class="dropdown-item" href="portfolio-4-col.html">4 Column
-							Portfolio</a> <a class="dropdown-item" href="portfolio-item.html">Single
+							href="${contextRoot}/portfolio-2-col">2 Column Portfolio</a> <a
+							class="dropdown-item" href="${contextRoot}/portfolio-3-col">3
+							Column Portfolio</a> <a class="dropdown-item"
+							href="${contextRoot}/portfolio-4-col">4 Column Portfolio</a> <a
+							class="dropdown-item" href="portfolio-item.html">Single
 							Portfolio Item</a>
 					</div></li>
 				<!-- Forms -->
@@ -38,7 +39,7 @@
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownPortfolio">
 						<a class="dropdown-item" href="${contextRoot}/employee">Employee</a>
-						<a class="dropdown-item" href="${contextRoot}/menifest">Menifest</a>
+						<a class="dropdown-item" href="${contextRoot}/manifest">Manifest</a>
 						<a class="dropdown-item" href="${contextRoot}/delivery">Delivery</a>
 					</div></li>
 
@@ -49,9 +50,9 @@
 						Blog </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownBlog">
-						<a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a> <a
-							class="dropdown-item" href="blog-home-2.html">Blog Home 2</a> <a
-							class="dropdown-item" href="blog-post.html">Blog Post</a>
+						<a class="dropdown-item" href="${contextRoot}/blog-home-1">Blog Home 1</a> <a
+							class="dropdown-item" href="${contextRoot}/blog-home-2">Blog Home 2</a> <a
+							class="dropdown-item" href="${contextRoot}/blog-post">Blog Post</a>
 					</div></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog"
