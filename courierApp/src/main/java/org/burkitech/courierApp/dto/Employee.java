@@ -27,7 +27,7 @@ public class Employee {
 	@NotBlank(message = "Please enter the route!")
 	@Column(name = "rut_no")
 	private String route;
-	
+
 	@Column(name = "city_no")
 	private String city;
 
@@ -51,7 +51,7 @@ public class Employee {
 		return joinDate;
 	}
 
-	public void setJoinDate(Date joinDate) {
+	void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
 

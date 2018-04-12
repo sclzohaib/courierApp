@@ -51,11 +51,42 @@
 	<c:if test="${userClickEmployee==true}">
 		<%@include file="employee.jsp"%>
 	</c:if>
-	<c:if test="${userClickMenifest==true}">
+	<c:if test="${userClickManifest==true}">
 		<%@include file="manifest.jsp"%>
 	</c:if>
 	<c:if test="${userClickDelivery==true}">
 		<%@include file="delivery.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPortfolio1Col==true}">
+		<%@include file="portfolio-1-col.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPortfolio2Col==true}">
+		<%@include file="portfolio-2-col.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPortfolio3Col==true}">
+		<%@include file="portfolio-3-col.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPortfolio4Col==true}">
+		<%@include file="portfolio-4-col.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPortfolioItem==true}">
+		<%@include file="portfolio-item.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickBlogHome1==true}">
+		<%@include file="blog-home-1.jsp"%>
+	</c:if>
+	<c:if test="${userClickBlogHome2==true}">
+		<%@include file="blog-home-2.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickBlogPost==true}">
+		<%@include file="blog-post.jsp"%>
 	</c:if>
 	<!-- /.container -->
 

@@ -1,10 +1,18 @@
 <div class="container">
 	<h2>${title}</h2>
+
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a>
+		</li>
+		<li class="breadcrumb-item active">Forms</li>
+		<li class="breadcrumb-item active">Delivery</li>
+	</ol>
+
 	<form>
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
-				<label for="validationServer01">Date</label> <input
-					type="text" class="form-control" id="validationServer01" required>
+				<label for="validationServer01">Date</label> <input type="text"
+					class="form-control" id="validationServer01" required>
 			</div>
 			<div class="col-md-4 mb-3">
 				<label for="validationServer02">Transport Type</label> <input
@@ -21,28 +29,24 @@
 				</div>
 			</div>
 			<div class="col-md-3 mb-3">
-				<label for="validationServer03">City</label> <input
-					type="text" class="form-control" id="validationServer03"
-				 required>
+				<label for="validationServer03">City</label> <input type="text"
+					class="form-control" id="validationServer03" required>
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
 				<label for="validationServer04">Time Slot</label> <input type="text"
-					class="form-control" id="validationServer04"
-					required>
+					class="form-control" id="validationServer04" required>
 			</div>
 			<div class="col-md-3 mb-3">
-				<label for="validationServer05">Employee</label> <input
-					type="text" class="form-control" id="validationServer05"
-				required>
+				<label for="validationServer05">Employee</label> <input type="text"
+					class="form-control" id="validationServer05" required>
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="col-md-6 mb-3">
-				<label for="validationServer03">Route</label> <input
-					type="text" class="form-control" id="validationServer03"
-					 required>
+				<label for="validationServer03">Route</label> <input type="text"
+					class="form-control" id="validationServer03" required>
 			</div>
 		</div>
 		<button class="btn btn-primary" type="submit">Submit form</button>

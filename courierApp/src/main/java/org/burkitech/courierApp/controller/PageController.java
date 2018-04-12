@@ -23,7 +23,6 @@ public class PageController {
 	private EmployeeDAO employeeDAO;
 	@Autowired
 	private ManifestDAO manifestDAO;
-	
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
@@ -60,6 +59,78 @@ public class PageController {
 
 	}
 
+	@RequestMapping(value = "/portfolio-1-col")
+	public ModelAndView portfolio_1_col() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Portfolio Column 1");
+		mv.addObject("userClickPortfolio1Col", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/portfolio-2-col")
+	public ModelAndView portfolio_2_col() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Portfolio Column 2");
+		mv.addObject("userClickPortfolio2Col", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/portfolio-3-col")
+	public ModelAndView portfolio_3_col() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Portfolio Column 3");
+		mv.addObject("userClickPortfolio3Col", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/portfolio-4-col")
+	public ModelAndView portfolio_4_col() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Portfolio Column 4");
+		mv.addObject("userClickPortfolio4Col", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/portfolio-item")
+	public ModelAndView portfolio_item() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Portfolio Item");
+		mv.addObject("userClickPortfolioItem", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/blog-home-1")
+	public ModelAndView blog_home_1() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Blog Home 1");
+		mv.addObject("userClickBlogHome1", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/blog-home-2")
+	public ModelAndView blog_home_2() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Blog Home 2");
+		mv.addObject("userClickBlogHome2", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/blog-post")
+	public ModelAndView blog_post() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Blog Post");
+		mv.addObject("userClickBlogPost", true);
+		return mv;
+
+	}
+
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public ModelAndView employee() {
 		ModelAndView mv = new ModelAndView("page");
@@ -69,10 +140,10 @@ public class PageController {
 		mv.addObject("employee", nEmployee);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/employee", method = RequestMethod.POST)
-	public String addemployee(@Valid @ModelAttribute("employee") Employee mEmployee, BindingResult results,
-			Model model, HttpServletRequest request) {
+	public String addemployee(@Valid @ModelAttribute("employee") Employee mEmployee, BindingResult results, Model model,
+			HttpServletRequest request) {
 		if (results.hasErrors()) {
 			model.addAttribute("userClickEmployee", true);
 			model.addAttribute("title", "Employee");
@@ -84,9 +155,14 @@ public class PageController {
 			employeeDAO.add(mEmployee);
 //			return "redirect:/employee";
 //		}
+		// if (mEmployee.getId() == 0) {
+		// System.out.println(mEmployee.getName());
+		// // create a new record of product
+		employeeDAO.add(mEmployee);
+		// return "redirect:/employee";
+		// }
 		return "redirect:/employee";
 	}
-
 	@RequestMapping(value = "/manifest", method = RequestMethod.GET)
 	public ModelAndView manifest() {
 		ModelAndView mv = new ModelAndView("page");
@@ -112,7 +188,6 @@ public class PageController {
 //		}
 		return "redirect:/manifest";
 	}
-	
 	@RequestMapping(value = "/delivery")
 	public ModelAndView delivery() {
 		ModelAndView mv = new ModelAndView("page");
