@@ -7,8 +7,10 @@ import org.burkitech.courierApp.dao.DeliveryDAO;
 import org.burkitech.courierApp.dao.EmployeeDAO;
 import org.burkitech.courierApp.dao.ManifestDAO;
 import org.burkitech.courierApp.dto.Delivery;
+import org.burkitech.courierApp.dto.DeliveryDetail;
 import org.burkitech.courierApp.dto.Employee;
 import org.burkitech.courierApp.dto.Manifest;
+import org.burkitech.courierApp.dto.ManifestDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +32,9 @@ public class PageController {
 	@Autowired
 	private DeliveryDAO deliveryDAO;
 
+	//------------------------------------------------------------
+	//Pages
+	//------------------------------------------------------------
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
@@ -137,7 +142,9 @@ public class PageController {
 		return mv;
 
 	}
-
+	//------------------------------------------------------------
+		//Employee form
+		//------------------------------------------------------------
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public ModelAndView employee() {
 		ModelAndView mv = new ModelAndView("page");
@@ -182,7 +189,27 @@ public class PageController {
 		manifestDAO.add(mManifest);
 		return "redirect:/manifest";
 	}
+	@RequestMapping(value = "/manifest_detail", method = RequestMethod.GET)
+	public ModelAndView manifestDetail() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Manifest Detail");
+		mv.addObject("userClickManifestDetail", true);
+		ManifestDetail nManifestDetail = new ManifestDetail();
+		mv.addObject("manifestDetail", nManifestDetail);
+		return mv;
+	}
 
+	@RequestMapping(value = "/manifest_detail", method = RequestMethod.POST)
+	public String addManifestDetail(@Valid @ModelAttribute("manifestDetail") ManifestDetail mManifestDetail, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickManifestDetail", true);
+			model.addAttribute("title", "Manifest Detail");
+			return "page";
+		}
+		manifestDAO.addDetail(mManifestDetail);
+		return "redirect:/manifest_detail";
+	}
 	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
 	public ModelAndView delivery() {
 		ModelAndView mv = new ModelAndView("page");
@@ -203,5 +230,27 @@ public class PageController {
 		}
 		deliveryDAO.add(mDelivery);
 		return "redirect:/delivery";
+	}
+	
+	@RequestMapping(value = "/delivery_detail", method = RequestMethod.GET)
+	public ModelAndView deliveryDetail() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Delivery Detail");
+		mv.addObject("userClickDeliveryDetail", true);
+		DeliveryDetail nDeliveryDetail = new DeliveryDetail();
+		mv.addObject("deliveryDetail", nDeliveryDetail);
+		return mv;
+
+	}
+	@RequestMapping(value = "/delivery_detail", method = RequestMethod.POST)
+	public String addDeliveryDetail(@Valid @ModelAttribute("deliveryDetail") DeliveryDetail mDeliveryDetail, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickDeliveryDetail", true);
+			model.addAttribute("title", "Delivery Detail");
+			return "page";
+		}
+		deliveryDAO.addDetail(mDeliveryDetail);
+		return "redirect:/delivery_detail";
 	}
 }
