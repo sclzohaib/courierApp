@@ -194,7 +194,7 @@ public class PageController {
 
 	}
 	@RequestMapping(value = "/delivery", method = RequestMethod.POST)
-	public String addDelivery(@Valid @ModelAttribute("manifest") Delivery mDelivery, BindingResult results, Model model,
+	public String addDelivery(@Valid @ModelAttribute("delivery") Delivery mDelivery, BindingResult results, Model model,
 			HttpServletRequest request) {
 		if (results.hasErrors()) {
 			model.addAttribute("userClickDelivery", true);
