@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "CS_CUST_TARRIF")
+import org.springframework.format.annotation.DateTimeFormat;
+
+//@Entity
+//@Table(name = "CS_CUST_TARRIF")
 public class CustomerTarrif {
 
 	@Id
@@ -49,6 +51,7 @@ public class CustomerTarrif {
 	private long otherCharges;
 	
 	@Column(name = "START_DATE")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
 	
 	public Date getStartDate() {
@@ -60,6 +63,7 @@ public class CustomerTarrif {
 	}
 
 	@Column(name = "END_DATE")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
 	public Date getEndDate() {
@@ -77,6 +81,7 @@ public class CustomerTarrif {
 	private String updatedBy;
 	
 	@Column(name = "UPDATED_DATE")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updateDate;
 	
 	public Date getUpdateDate() {
@@ -230,6 +235,17 @@ public class CustomerTarrif {
 
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerTarrif [customerID=" + customerID + ", productId=" + productId + ", serviceCode=" + serviceCode
+				+ ", sectorId=" + sectorId + ", destination=" + destination + ", wttLowerLimit=" + wttLowerLimit
+				+ ", wttUpperLimit=" + wttUpperLimit + ", divFac=" + divFac + ", charges=" + charges
+				+ ", additionalCharges=" + additionalCharges + ", handlingCharges=" + handlingCharges
+				+ ", otherCharges=" + otherCharges + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", approvalAuth=" + approvalAuth + ", updatedBy=" + updatedBy + ", updateDate=" + updateDate
+				+ ", employeeId=" + employeeId + ", stat=" + stat + ", remarks=" + remarks + "]";
 	}
 	
 	

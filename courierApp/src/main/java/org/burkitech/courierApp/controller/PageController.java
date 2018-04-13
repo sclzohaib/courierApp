@@ -3,9 +3,11 @@ package org.burkitech.courierApp.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.burkitech.courierApp.dao.BookInfoDAO;
 import org.burkitech.courierApp.dao.DeliveryDAO;
 import org.burkitech.courierApp.dao.EmployeeDAO;
 import org.burkitech.courierApp.dao.ManifestDAO;
+import org.burkitech.courierApp.dto.BookInfo;
 import org.burkitech.courierApp.dto.Delivery;
 import org.burkitech.courierApp.dto.DeliveryDetail;
 import org.burkitech.courierApp.dto.Employee;
@@ -31,6 +33,9 @@ public class PageController {
 
 	@Autowired
 	private DeliveryDAO deliveryDAO;
+	
+	@Autowired
+	private BookInfoDAO bookInfoDAO;
 
 	//------------------------------------------------------------
 	//Pages
@@ -235,7 +240,7 @@ public class PageController {
 		manifestDAO.add(mManifest);
 		return "redirect:/manifest";
 	}
-	@RequestMapping(value = "/manifest_detail", method = RequestMethod.GET)
+	@RequestMapping(value = "/manifest-detail", method = RequestMethod.GET)
 	public ModelAndView manifestDetail() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Manifest Detail");
@@ -245,7 +250,7 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/manifest_detail", method = RequestMethod.POST)
+	@RequestMapping(value = "/manifest-detail", method = RequestMethod.POST)
 	public String addManifestDetail(@Valid @ModelAttribute("manifestDetail") ManifestDetail mManifestDetail, BindingResult results, Model model,
 			HttpServletRequest request) {
 		if (results.hasErrors()) {
@@ -279,7 +284,7 @@ public class PageController {
 		return "redirect:/delivery";
 	}
 	
-	@RequestMapping(value = "/delivery_detail", method = RequestMethod.GET)
+	@RequestMapping(value = "/delivery-detail", method = RequestMethod.GET)
 	public ModelAndView deliveryDetail() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Delivery Detail");
@@ -289,7 +294,7 @@ public class PageController {
 		return mv;
 
 	}
-	@RequestMapping(value = "/delivery_detail", method = RequestMethod.POST)
+	@RequestMapping(value = "/delivery-detail", method = RequestMethod.POST)
 	public String addDeliveryDetail(@Valid @ModelAttribute("deliveryDetail") DeliveryDetail mDeliveryDetail, BindingResult results, Model model,
 			HttpServletRequest request) {
 		if (results.hasErrors()) {
@@ -299,5 +304,27 @@ public class PageController {
 		}
 		deliveryDAO.addDetail(mDeliveryDetail);
 		return "redirect:/delivery_detail";
+	}
+	
+	@RequestMapping(value = "/book-info", method = RequestMethod.GET)
+	public ModelAndView bookInfo() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Book Info");
+		mv.addObject("userClickBookInfo", true);
+		BookInfo nBookInfo = new BookInfo();
+		mv.addObject("bookInfo", nBookInfo);
+		return mv;
+
+	}
+	@RequestMapping(value = "/book-info", method = RequestMethod.POST)
+	public String addBookInfo(@Valid @ModelAttribute("bookInfo") BookInfo mBookInfo, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickBookInfo", true);
+			model.addAttribute("title", "Book Info");
+			return "page";
+		}
+		bookInfoDAO.add(mBookInfo);
+		return "redirect:/book-info";
 	}
 }

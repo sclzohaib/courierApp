@@ -1,7 +1,11 @@
 package org.burkitech.courierApp.dto;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 //@Entity
 //@Table(name="cs_city")
@@ -60,7 +64,8 @@ public class City {
 	private String telx;
 	
 	@Column(name = "STD_TIME")
-	private String stdTime;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date stdTime;
 	
 	@Column(name = "OSEC")
 	private String osec;
@@ -204,11 +209,11 @@ public class City {
 		this.telx = telx;
 	}
 
-	public String getStdTime() {
+	public Date getStdTime() {
 		return stdTime;
 	}
 
-	public void setStdTime(String stdTime) {
+	public void setStdTime(Date stdTime) {
 		this.stdTime = stdTime;
 	}
 
