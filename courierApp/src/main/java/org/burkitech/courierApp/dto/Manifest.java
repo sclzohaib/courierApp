@@ -12,38 +12,46 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "manifest")
 public class Manifest {
-	
+
 	@Id
 	@Column(name = "manifest_id")
 	private String id;
-	
+
 	@Column(name = "bag_no")
 	private String bagNo;
-	
+
 	@Column(name = "man_type")
 	private String type;
-	
+
 	private String origin;
-	
+
 	@Column(name = "dest")
 	private String destination;
-	
+
 	@Column(name = "m_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date mdate;
+	private Date mDate;
 	
+	public Date getmDate() {
+		return mDate;
+	}
+
+	public void setmDate(Date mDate) {
+		this.mDate = mDate;
+	}
+
 	@Column(name = "vehicle_no")
 	private long vehicleNo;
-	
+
 	@Column(name = "total_quantity")
 	private long totalQuantity;
-	
+
 	@Column(name = "total_weight")
 	private long totalWeight;
-	
+
 	@Column(name = "prod_id")
 	private String product;
-	
+
 	@Column(name = "emp_id")
 	private String employee;
 
@@ -87,14 +95,6 @@ public class Manifest {
 		this.destination = destination;
 	}
 
-	public Date getDate() {
-		return mdate;
-	}
-
-	public void setDate(Date mdate) {
-		this.mdate = mdate;
-	}
-
 	public long getVehicleNo() {
 		return vehicleNo;
 	}
@@ -134,6 +134,13 @@ public class Manifest {
 	public void setEmployee(String employee) {
 		this.employee = employee;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Manifest [id=" + id + ", bagNo=" + bagNo + ", type=" + type + ", origin=" + origin + ", destination="
+				+ destination + ", mDate=" + mDate + ", vehicleNo=" + vehicleNo + ", totalQuantity=" + totalQuantity
+				+ ", totalWeight=" + totalWeight + ", product=" + product + ", employee=" + employee + "]";
+	}
+
 	
 }
