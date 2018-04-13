@@ -3,7 +3,7 @@
 
 	<!-- Page Heading/Breadcrumbs -->
 	<h1 class="mt-4 mb-3">
-		About <small>Subheading</small>
+		About <small>Burki Courier</small>
 	</h1>
 
 	<ol class="breadcrumb">
@@ -14,11 +14,11 @@
 	<!-- Intro Content -->
 	<div class="row">
 		<div class="col-lg-6">
-			<img class="img-fluid rounded mb-4" src="http://placehold.it/750x450"
+			<img class="img-fluid rounded mb-4" src="${images}/aboutus.jpg"
 				alt="">
 		</div>
 		<div class="col-lg-6">
-			<h2>About Modern Business</h2>
+			<h2>About Burki Courier</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
 				voluptate nihil eum consectetur similique? Consectetur, quod,
 				incidunt, harum nisi dolores delectus reprehenderit voluptatem

@@ -42,7 +42,16 @@
 						<a class="dropdown-item" href="${contextRoot}/manifest">Manifest</a>
 						<a class="dropdown-item" href="${contextRoot}/delivery">Delivery</a>
 					</div></li>
-
+<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownPortfolio" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Setup </a>
+					<div class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="navbarDropdownPortfolio">
+						<a class="dropdown-item" href="${contextRoot}/employee">Book Info</a>
+						<a class="dropdown-item" href="${contextRoot}/manifest">Book Detail</a>
+						<a class="dropdown-item" href="${contextRoot}/delivery">City</a>
+					</div></li>
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog"
@@ -50,9 +59,10 @@
 						Blog </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownBlog">
-						<a class="dropdown-item" href="${contextRoot}/blog-home-1">Blog Home 1</a> <a
-							class="dropdown-item" href="${contextRoot}/blog-home-2">Blog Home 2</a> <a
-							class="dropdown-item" href="${contextRoot}/blog-post">Blog Post</a>
+						<a class="dropdown-item" href="${contextRoot}/blog-home-1">Blog
+							Home 1</a> <a class="dropdown-item" href="${contextRoot}/blog-home-2">Blog
+							Home 2</a> <a class="dropdown-item" href="${contextRoot}/blog-post">Blog
+							Post</a>
 					</div></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog"
@@ -60,11 +70,12 @@
 						Other Pages </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownBlog">
-						<a class="dropdown-item" href="full-width.html">Full Width
-							Page</a> <a class="dropdown-item" href="sidebar.html">Sidebar
-							Page</a> <a class="dropdown-item" href="faq.html">FAQ</a> <a
-							class="dropdown-item" href="404.html">404</a> <a
-							class="dropdown-item" href="pricing.html">Pricing Table</a>
+						<a class="dropdown-item" href="${contextRoot}/fullWidth">Full
+							Width Page</a> <a class="dropdown-item" href="${contextRoot}/sideBar">Sidebar
+							Page</a> <a class="dropdown-item" href="${contextRoot}/faq">FAQ</a> <a
+							class="dropdown-item" href="${contextRoot}/page404">404</a> <a
+							class="dropdown-item" href="${contextRoot}/pricing">Pricing
+							Table</a>
 					</div></li>
 			</ul>
 		</div>
