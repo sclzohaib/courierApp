@@ -23,10 +23,10 @@ public class PageController {
 
 	@Autowired
 	private EmployeeDAO employeeDAO;
-	
+
 	@Autowired
 	private ManifestDAO manifestDAO;
-	
+
 	@Autowired
 	private DeliveryDAO deliveryDAO;
 
@@ -138,6 +138,51 @@ public class PageController {
 
 	}
 
+	@RequestMapping(value = "/fullWidth")
+	public ModelAndView fullWidth() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Full Width Page");
+		mv.addObject("userClickFullWidth", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/sideBar")
+	public ModelAndView sideBar() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Side Bar Page");
+		mv.addObject("userClickSideBar", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/faq")
+	public ModelAndView faq() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "FAQ");
+		mv.addObject("userClickFaq", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/page404")
+	public ModelAndView page404() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "404");
+		mv.addObject("userClickPage404", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/pricing")
+	public ModelAndView pricing() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Pricing Table");
+		mv.addObject("userClickPricing", true);
+		return mv;
+
+	}
+
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public ModelAndView employee() {
 		ModelAndView mv = new ModelAndView("page");
@@ -193,6 +238,7 @@ public class PageController {
 		return mv;
 
 	}
+
 	@RequestMapping(value = "/delivery", method = RequestMethod.POST)
 	public String addDelivery(@Valid @ModelAttribute("delivery") Delivery mDelivery, BindingResult results, Model model,
 			HttpServletRequest request) {

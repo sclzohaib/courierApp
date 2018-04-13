@@ -27,7 +27,7 @@
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
 				<label for="dDate">Date</label>
-				<sf:input type="text" class="form-control" id="dDate" path="dDate" />
+				<sf:input type="date" class="form-control" id="dDate" path="dDate" />
 			</div>
 			<div class="col-md-4 mb-3">
 				<label for="transportType">Transport Type</label>

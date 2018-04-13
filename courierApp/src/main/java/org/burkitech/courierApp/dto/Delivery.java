@@ -9,19 +9,18 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-//@Entity
-//@Table(name = "emp")
+@Entity
+@Table(name = "delivery_master")
 public class Delivery {
 
 	@Id
 	@Column(name = "delivery_sht_no")
 	private String id;
-	
+
 	@Column(name = "d_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dDate;
-	
-	
+
 	public Date getdDate() {
 		return dDate;
 	}
@@ -32,19 +31,19 @@ public class Delivery {
 
 	@Column(name = "transport_type")
 	private String transportType;
-	
+
 	@Column(name = "vehicle_no")
 	private String vehicleNo;
-	
+
 	@Column(name = "city_no")
 	private String cityNo;
-	
+
 	@Column(name = "time_slot")
 	private String timeSlot;
-	
+
 	@Column(name = "emp_id")
 	private String empId;
-	
+
 	@Column(name = "rut_no")
 	private String route;
 
@@ -104,6 +103,4 @@ public class Delivery {
 		this.route = route;
 	}
 
-	
-	
 }

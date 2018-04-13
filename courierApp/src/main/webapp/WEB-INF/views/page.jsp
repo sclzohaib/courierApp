@@ -88,6 +88,26 @@
 	<c:if test="${userClickBlogPost==true}">
 		<%@include file="blog-post.jsp"%>
 	</c:if>
+
+	<c:if test="${userClickFullWidth==true}">
+		<%@include file="full-width.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickSideBar==true}">
+		<%@include file="sidebar.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickFaq==true}">
+		<%@include file="faq.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPage404==true}">
+		<%@include file="404.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPricing==true}">
+		<%@include file="pricing.jsp"%>
+	</c:if>
 	<!-- /.container -->
 
 	<!-- Footer -->
