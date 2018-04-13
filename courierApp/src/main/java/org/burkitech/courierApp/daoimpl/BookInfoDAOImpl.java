@@ -1,22 +1,22 @@
 package org.burkitech.courierApp.daoimpl;
 
-import org.burkitech.courierApp.dao.DeliveryDAO;
-import org.burkitech.courierApp.dto.Delivery;
-import org.burkitech.courierApp.dto.DeliveryDetail;
+import org.burkitech.courierApp.dao.BookInfoDAO;
+import org.burkitech.courierApp.dto.BookDetail;
+import org.burkitech.courierApp.dto.BookInfo;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Repository("deliveryDAO")
+@Repository("bookInfoDAO")
 @Transactional
-public class DeliveryDAOImpl implements DeliveryDAO{
+public class BookInfoDAOImpl implements BookInfoDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 	@Override
-	public boolean add(Delivery delivery) {
+	public boolean add(BookInfo bookInfo) {
 		try {
-			sessionFactory.getCurrentSession().persist(delivery);
+			sessionFactory.getCurrentSession().persist(bookInfo);
 			return true;
 		}
 
@@ -26,9 +26,9 @@ public class DeliveryDAOImpl implements DeliveryDAO{
 		}
 	}
 	@Override
-	public boolean addDetail(DeliveryDetail deliveryDetail) {
+	public boolean addDetail(BookDetail bookDetail) {
 		try {
-			sessionFactory.getCurrentSession().persist(deliveryDetail);
+			sessionFactory.getCurrentSession().persist(bookDetail);
 			return true;
 		}
 
