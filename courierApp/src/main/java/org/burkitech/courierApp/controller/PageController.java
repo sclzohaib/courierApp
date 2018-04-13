@@ -3,8 +3,10 @@ package org.burkitech.courierApp.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.burkitech.courierApp.dao.DeliveryDAO;
 import org.burkitech.courierApp.dao.EmployeeDAO;
 import org.burkitech.courierApp.dao.ManifestDAO;
+import org.burkitech.courierApp.dto.Delivery;
 import org.burkitech.courierApp.dto.Employee;
 import org.burkitech.courierApp.dto.Manifest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class PageController {
 	
 	@Autowired
 	private ManifestDAO manifestDAO;
+	
+	@Autowired
+	private DeliveryDAO deliveryDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
@@ -174,21 +179,29 @@ public class PageController {
 			model.addAttribute("title", "Manifest");
 			return "page";
 		}
-		// if(mEmployee.getId()==0) {
-		// System.out.println(mEmployee.getName());
-		// // create a new record of product
 		manifestDAO.add(mManifest);
-		// return "redirect:/employee";
-		// }
 		return "redirect:/manifest";
 	}
 
-	@RequestMapping(value = "/delivery")
+	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
 	public ModelAndView delivery() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Delivery");
 		mv.addObject("userClickDelivery", true);
+		Delivery nDelivery = new Delivery();
+		mv.addObject("delivery", nDelivery);
 		return mv;
 
+	}
+	@RequestMapping(value = "/delivery", method = RequestMethod.POST)
+	public String addDelivery(@Valid @ModelAttribute("delivery") Delivery mDelivery, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickDelivery", true);
+			model.addAttribute("title", "Delivery");
+			return "page";
+		}
+		deliveryDAO.add(mDelivery);
+		return "redirect:/delivery";
 	}
 }
