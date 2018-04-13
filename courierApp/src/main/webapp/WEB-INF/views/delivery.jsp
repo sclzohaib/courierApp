@@ -66,5 +66,6 @@
 			</div>
 		</div>
 		<button class="btn btn-primary" type="submit">Submit form</button>
+		<!-- Form end -->
 	</sf:form>
 </div>
