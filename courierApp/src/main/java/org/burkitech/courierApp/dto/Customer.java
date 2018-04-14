@@ -13,15 +13,14 @@ public class Customer {
 	@Id
 	@Column(name = "CUST_ID")
 	private String customerID;
-	
+
 	@Column(name = "IND_NO")
 	private String intNo;
-	
+
 	@Column(name = "REGS_DAT")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date registrationDate;
-	
-	
+
 	public Date getRegistrationDate() {
 		return registrationDate;
 	}
@@ -33,7 +32,7 @@ public class Customer {
 	@Column(name = "UPDATED_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedDate;
-	
+
 	public Date getUpdatedDate() {
 		return updatedDate;
 	}
@@ -45,7 +44,7 @@ public class Customer {
 	@Column(name = "CLOSE_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date closeDate;
-	
+
 	public Date getCloseDate() {
 		return closeDate;
 	}
@@ -57,7 +56,7 @@ public class Customer {
 	@Column(name = "CUS_EXPIRED_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expiredDate;
-	
+
 	public Date getExpiredDate() {
 		return expiredDate;
 	}
@@ -68,111 +67,111 @@ public class Customer {
 
 	@Column(name = "ACC_FEE")
 	private String accFee;
-	
+
 	@Column(name = "SERV_CHRG")
 	private long serviceCharges;
-	
+
 	@Column(name = "REC_TER_ID")
 	private long recTerId;
-	
+
 	@Column(name = "FEE_FLAG")
 	private String feeFlag;
-	
+
 	@Column(name = "BILLING_STATUS")
 	private String billingStatus;
-	
+
 	@Column(name = "PIN_NO")
 	private String pinNO;
-	
+
 	@Column(name = "STAT")
 	private String stat;
-	
+
 	@Column(name = "BILLING_CUST")
 	private String billingCust;
-	
+
 	@Column(name = "TRTY_CODE")
 	private String trtyCode;
-	
+
 	@Column(name = "HNDLG_EXEMPT")
 	private String handlingExempt;
-	
+
 	@Column(name = "TRF_YEAR")
 	private String trfYear;
-	
+
 	@Column(name = "BANK_CODE")
 	private String bankCode;
-	
+
 	@Column(name = "EMP_ID")
 	private String employeeId;
-	
+
 	@Column(name = "OCTROI_EXEMPT")
 	private String octroiExempt;
-	
+
 	@Column(name = "CUS_GST")
 	private String cusGst;
-	
+
 	@Column(name = "DISCOUNT_FLAG")
 	private String discountFlag;
-	
+
 	@Column(name = "ADDR1")
 	private String address1;
-	
+
 	@Column(name = "ADDR2")
 	private String address2;
-	
+
 	@Column(name = "ADDR3")
 	private String address3;
-	
+
 	@Column(name = "DESIG")
 	private String designation;
-	
+
 	@Column(name = "INT_ADDR")
 	private String intAddess;
-	
+
 	//
-	
+
 	@Column(name = "CUST_ID2")
 	private String customerId2;
-	
+
 	@Column(name = "CONT_PER")
 	private String contPer;
-	
+
 	@Column(name = "CUS_NAM")
 	private String customerName;
-	
+
 	@Column(name = "PCUS_NO")
 	private String pcusNo;
-	
+
 	@Column(name = "CRDT_AMT_LMT")
 	private String creditAmountLimit;
-	
+
 	@Column(name = "INV_TYPE_NO")
 	private String invTypeNo;
-	
+
 	@Column(name = "DSCNT_BOTT")
 	private long discountBott;
-	
+
 	@Column(name = "CRDT_DAYS")
 	private long creditDays;
-	
+
 	@Column(name = "CRDT_DAYS_LMT")
 	private String creditDaysLimit;
-	
+
 	@Column(name = "CITY_NO")
 	private String cityNo;
-	
+
 	@Column(name = "EMP_ID2")
 	private String employeeId2;
-	
+
 	@Column(name = "RUT_NO")
 	private String routeNo;
-	
+
 	@Column(name = "CUS_PROD")
 	private String customerProduct;
-	
+
 	@Column(name = "BILL_CYC_NO")
 	private String billCycNo;
-	
+
 	@Column(name = "CUS_CASH")
 	private String customerCash;
 
@@ -497,6 +496,5 @@ public class Customer {
 				+ ", customerProduct=" + customerProduct + ", billCycNo=" + billCycNo + ", customerCash=" + customerCash
 				+ "]";
 	}
-	
-	
+
 }
