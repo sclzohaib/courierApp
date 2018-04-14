@@ -16,14 +16,14 @@ public class BookInfo {
 	@Id
 	@Column(name = "awb_no")
 	private String awbNo;
-	
+
 	@Column(name = "BILL_REF#")
 	private String billRef;
-	
+
 	@Column(name = "BKG_DAT")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date bkgDate;
-		
+
 	public Date getBkgDate() {
 		return bkgDate;
 	}
@@ -34,95 +34,95 @@ public class BookInfo {
 
 	@Column(name = "CUST_ID")
 	private String customerId;
-	
+
 	@Column(name = "SHIP_TYPE")
 	private String shipType;
-	
+
 	@Column(name = "PROD_ID")
 	private String productId;
-	
+
 	@Column(name = "SERVICE_NO")
 	private String serviceNo;
-	
+
 	@Column(name = "SECTOR_ID")
 	private String sectorId;
-	
+
 	@Column(name = "ORIGN")
 	private String origin;
-	
+
 	@Column(name = "DESTN")
 	private String destination;
-	
+
 	@Column(name = "BOOK_WT")
 	private long bookWt;
-	
+
 	@Column(name = "ACTUAL_WT")
 	private long actualWt;
-	
+
 	@Column(name = "PAY_ID")
 	private String payId;
-	
+
 	@Column(name = "EMP_ID")
 	private String empId;
-	
+
 	@Column(name = "OUT_SRV_CHARGES")
 	private long outServiceCharges;
-	
+
 	@Column(name = "HANDLING_CHG")
 	private long handlingCharges;
-	
+
 	@Column(name = "OTHER_CHRG")
 	private long otherCharges;
-	
+
 	@Column(name = "AMOUNT")
 	private long amount;
-	
+
 	@Column(name = "PARTNER_COMM")
 	private long partnerComm;
-	
+
 	@Column(name = "PART_COMM")
 	private long partComm;
-	
+
 	@Column(name = "AMT_CAL")
 	private long amountCal;
-	
+
 	@Column(name = "HND_INSTRUCTION")
 	private String hndInstruction;
-	
+
 	@Column(name = "GST")
 	private long gst;
-	
+
 	@Column(name = "SHIP_VALUE")
 	private long shipValue;
-	
+
 	@Column(name = "INSURANCE_CHG")
 	private long insuranceCharges;
-	
+
 	@Column(name = "ROUTE_CODE")
 	private String Routecode;
-	
+
 	@Column(name = "USERID")
 	private String userid;
-	
+
 	@Column(name = "SYSID")
 	private String sysId;
-	
+
 	@Column(name = "DISCOUNT_SHIP")
 	private long discountShip;
-		
+
 	@Column(name = "DISCOUNT_BOTT")
 	private long discountBott;
-	
+
 	@Column(name = "DISCOUNT_FREQ")
 	private long discountFreq;
-	
+
 	@Column(name = "INCEN_AMT")
 	private long incremenAmount;
-	
+
 	@Column(name = "CREATE_DATIME")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createDatetime;
-	
+
 	public Date getCreateDatetime() {
 		return createDatetime;
 	}
@@ -133,11 +133,11 @@ public class BookInfo {
 
 	@Column(name = "SCAN_STAT2")
 	private String scanStat2;
-	
+
 	@Column(name = "SCAN_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date scanDate;
-	
+
 	public Date getScanDate() {
 		return scanDate;
 	}
@@ -149,7 +149,7 @@ public class BookInfo {
 	@Column(name = "RPT_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date rptDate;
-	
+
 	public Date getRptDate() {
 		return rptDate;
 	}
@@ -160,17 +160,17 @@ public class BookInfo {
 
 	@Column(name = "EOD_STATUS")
 	private String eodStatus;
-	
+
 	@Column(name = "BILL_STATUS")
 	private String billStatus;
-	
+
 	@Column(name = "INC_STATUS")
 	private String incStatus;
-	
+
 	@Column(name = "CUT_OF_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date cutOfDate;
-	
+
 	public Date getCutOfDate() {
 		return cutOfDate;
 	}
@@ -181,19 +181,19 @@ public class BookInfo {
 
 	@Column(name = "USER_ID")
 	private String userId;
-	
+
 	@Column(name = "DISCOUNT")
 	private String discount;
-	
+
 	@Column(name = "DISCOUNT_UNIT")
 	private long discountUnit;
-	
+
 	@Column(name = "DISCOUNT_WTT")
 	private long discountWt;
-	
+
 	@Column(name = "CUST_REF")
 	private String custRef;
-	
+
 	@Column(name = "BILL_CALLDATE")
 	private String billCallDate;
 
@@ -543,6 +543,5 @@ public class BookInfo {
 				+ discountUnit + ", discountWt=" + discountWt + ", custRef=" + custRef + ", billCallDate="
 				+ billCallDate + "]";
 	}
-	
-	
+
 }

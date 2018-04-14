@@ -95,24 +95,120 @@
 					path="outServiceCharges" />
 			</div>
 			<div class="col-md-2 mb-3">
-				<label for="validationServer03">City</label>
-				<sf:input type="text" class="form-control" id="city" path="city" />
+				<label for="handlingCharges">Handling Charges</label>
+				<sf:input type="text" class="form-control" id="handlingCharges"
+					path="handlingCharges" />
 			</div>
 			<div class="col-md-2 mb-3">
-				<label for="validationServer03">City</label>
-				<sf:input type="text" class="form-control" id="city" path="city" />
+				<label for="otherCharges">Other Charges</label>
+				<sf:input type="text" class="form-control" id="otherCharges"
+					path="otherCharges" />
 			</div>
 			<div class="col-md-2 mb-3">
-				<label for="validationServer03">City</label>
-				<sf:input type="text" class="form-control" id="city" path="city" />
+				<label for="amount">Amount</label>
+				<sf:input type="text" class="form-control" id="amount" path="amount" />
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="col-md-2 mb-3">
-				<label for="validationServer03">City</label>
-				<sf:input type="text" class="form-control" id="city" path="city" />
+				<label for="partnerComm">Partner Commission</label>
+				<sf:input type="text" class="form-control" id="partnerComm"
+					path="partnerComm" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="partComm">Part Commission</label>
+				<sf:input type="text" class="form-control" id="partComm"
+					path="partComm" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="amountCal">Amount Calculation</label>
+				<sf:input type="text" class="form-control" id="amountCal"
+					path="amountCal" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="hndInstruction">HND Instruction</label>
+				<sf:input type="text" class="form-control" id="hndInstruction"
+					path="hndInstruction" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="gst">GST</label>
+				<sf:input type="text" class="form-control" id="gst" path="gst" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="shipValue">Ship Value</label>
+				<sf:input type="text" class="form-control" id="shipValue"
+					path="shipValue" />
 			</div>
 		</div>
+
+
+		<div class="form-row">
+			<div class="col-md-2 mb-3">
+				<label for="insuranceCharges">Insurance Charges</label>
+				<sf:input type="text" class="form-control" id="insuranceCharges"
+					path="insuranceCharges" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="Routecode">Route Code</label>
+				<sf:input type="text" class="form-control" id="Routecode"
+					path="Routecode" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="userid">User ID</label>
+				<sf:input type="text" class="form-control" id="userid" path="userid" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="sysId">SYS ID</label>
+				<sf:input type="text" class="form-control" id="sysId" path="sysId" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="discountShip">Discount Ship</label>
+				<sf:input type="text" class="form-control" id="discountShip"
+					path="discountShip" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="discountBott">Discount Bott</label>
+				<sf:input type="text" class="form-control" id="discountBott"
+					path="discountBott" />
+			</div>
+		</div>
+
+
+		<div class="form-row">
+			<div class="col-md-2 mb-3">
+				<label for="discountFreq">Discount Freq</label>
+				<sf:input type="text" class="form-control" id="discountFreq"
+					path="discountFreq" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="incremenAmount">Incen Amount</label>
+				<sf:input type="text" class="form-control" id="incremenAmount"
+					path="incremenAmount" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="createDatetime">Create Date Time</label>
+				<sf:input type="date" class="form-control" id="createDatetime"
+					path="createDatetime" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="scanStat2">Scan Stat 2</label>
+				<sf:input type="text" class="form-control" id="scanStat2"
+					path="scanStat2" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="discountShip">Discount Ship</label>
+				<sf:input type="text" class="form-control" id="discountShip"
+					path="discountShip" />
+			</div>
+			<div class="col-md-2 mb-3">
+				<label for="discountBott">Discount Bott</label>
+				<sf:input type="text" class="form-control" id="discountBott"
+					path="discountBott" />
+			</div>
+		</div>
+
+
+
 		<button class="btn btn-primary" id="submit" type="submit">Submit</button>
 		<sf:hidden path="id" />
 	</sf:form>
