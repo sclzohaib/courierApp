@@ -479,6 +479,7 @@ public class Customer {
 		this.customerCash = customerCash;
 	}
 
+	// to string method
 	@Override
 	public String toString() {
 		return "Customer [customerID=" + customerID + ", intNo=" + intNo + ", registrationDate=" + registrationDate
