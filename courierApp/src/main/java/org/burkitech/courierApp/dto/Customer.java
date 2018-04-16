@@ -15,7 +15,7 @@ public class Customer {
 	private String customerID;
 
 	@Column(name = "IND_NO")
-	private String intNo;
+	private String indNo;
 
 	@Column(name = "REGS_DAT")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -27,18 +27,6 @@ public class Customer {
 
 	public void setRegistrationDate(Date registrationDate) {
 		this.registrationDate = registrationDate;
-	}
-
-	@Column(name = "UPDATED_DATE")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updatedDate;
-
-	public Date getUpdatedDate() {
-		return updatedDate;
-	}
-
-	public void setUpdatedDate(Date updatedDate) {
-		this.updatedDate = updatedDate;
 	}
 
 	@Column(name = "CLOSE_DATE")
@@ -184,11 +172,11 @@ public class Customer {
 	}
 
 	public String getIntNo() {
-		return intNo;
+		return indNo;
 	}
 
-	public void setIntNo(String intNo) {
-		this.intNo = intNo;
+	public void setIntNo(String indNo) {
+		this.indNo = indNo;
 	}
 
 	public String getAccFee() {
@@ -482,8 +470,8 @@ public class Customer {
 	// to string method
 	@Override
 	public String toString() {
-		return "Customer [customerID=" + customerID + ", intNo=" + intNo + ", registrationDate=" + registrationDate
-				+ ", updatedDate=" + updatedDate + ", closeDate=" + closeDate + ", expiredDate=" + expiredDate
+		return "Customer [customerID=" + customerID + ", intNo=" + indNo + ", registrationDate=" + registrationDate
+				+ ", closeDate=" + closeDate + ", expiredDate=" + expiredDate
 				+ ", accFee=" + accFee + ", serviceCharges=" + serviceCharges + ", recTerId=" + recTerId + ", feeFlag="
 				+ feeFlag + ", billingStatus=" + billingStatus + ", pinNO=" + pinNO + ", stat=" + stat
 				+ ", billingCust=" + billingCust + ", trtyCode=" + trtyCode + ", handlingExempt=" + handlingExempt
