@@ -27,16 +27,16 @@
 			</div>
 			<div class="col-md-2 mb-3">
 				<label for="registrationDate">Registration Date</label>
-				<sf:input type="text" class="form-control" id="registrationDate"
+				<sf:input type="date" class="form-control" id="registrationDate"
 					path="registrationDate" />
 			</div>
 			<div class="col-md-2 mb-3">
 				<label for="closeDate">Close Date</label>
-				<sf:input type="text" class="form-control" id="closeDate"
+				<sf:input type="date" class="form-control" id="closeDate"
 					path="closeDate" />
 			</div>
 			<div class="col-md-2 mb-3">
-				<label for="expiredDate">Expiry Date</label>
+				<label for="date">Expiry Date</label>
 				<sf:input type="text" class="form-control" id="expiredDate"
 					path="expiredDate" />
 			</div>
@@ -49,12 +49,12 @@
 		<div class="form-row">
 			<div class="col-md-2 mb-3">
 				<label for="serviceCharges">Service Charges</label>
-				<sf:input type="text" class="form-control" id="serviceCharges"
+				<sf:input type="number" class="form-control" id="serviceCharges"
 					path="serviceCharges" />
 			</div>
 			<div class="col-md-2 mb-3">
 				<label for="recTerId">Rec Ter ID</label>
-				<sf:input type="text" class="form-control" id="recTerId"
+				<sf:input type="number" class="form-control" id="recTerId"
 					path="recTerId" />
 			</div>
 			<div class="col-md-2 mb-3">
@@ -189,12 +189,12 @@
 			</div>
 			<div class="col-md-2 mb-3">
 				<label for="discountBott">Discount Bott</label>
-				<sf:input type="date" class="form-control" id="discountBott"
+				<sf:input type="number" class="form-control" id="discountBott"
 					path="discountBott" />
 			</div>
 			<div class="col-md-2 mb-3">
 				<label for="creditDays">Credit Days</label>
-				<sf:input type="text" class="form-control" id="creditDays"
+				<sf:input type="number" class="form-control" id="creditDays"
 					path="creditDays" />
 			</div>
 			<div class="col-md-2 mb-3">
@@ -220,7 +220,7 @@
 			</div>
 			<div class="col-md-2 mb-3">
 				<label for="customerProduct">Customer Product</label>
-				<sf:input type="date" class="form-control" id="customerProduct"
+				<sf:input type="text" class="form-control" id="customerProduct"
 					path="customerProduct" />
 			</div>
 			<div class="col-md-2 mb-3">
