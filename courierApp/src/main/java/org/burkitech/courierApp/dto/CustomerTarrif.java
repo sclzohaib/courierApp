@@ -78,17 +78,17 @@ public class CustomerTarrif {
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
 	
-	@Column(name = "UPDATED_DATE")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updateDate;
-	
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
+//	@Column(name = "UPDATED_DATE")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	private Date updateDate;
+//	
+//	public Date getUpdateDate() {
+//		return updateDate;
+//	}
+//
+//	public void setUpdateDate(Date updateDate) {
+//		this.updateDate = updateDate;
+//	}
 
 	@Column(name = "EMP_ID")
 	private String employeeId;
@@ -242,7 +242,7 @@ public class CustomerTarrif {
 				+ ", wttUpperLimit=" + wttUpperLimit + ", divFac=" + divFac + ", charges=" + charges
 				+ ", additionalCharges=" + additionalCharges + ", handlingCharges=" + handlingCharges
 				+ ", otherCharges=" + otherCharges + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", approvalAuth=" + approvalAuth + ", updatedBy=" + updatedBy + ", updateDate=" + updateDate
+				+ ", approvalAuth=" + approvalAuth + ", updatedBy=" + updatedBy 
 				+ ", employeeId=" + employeeId + ", stat=" + stat + ", remarks=" + remarks + "]";
 	}
 	
