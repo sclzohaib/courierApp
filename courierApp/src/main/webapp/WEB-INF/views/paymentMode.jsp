@@ -20,7 +20,8 @@
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
 				<label for="payCode">Pay Code</label>
-				<sf:input type="text" class="form-control" id="payCode" path="payCode" />
+				<sf:input type="text" class="form-control" id="payCode"
+					path="payCode" />
 			</div>
 			<div class="col-md-3 mb-3">
 				<label for="description">Description</label>
@@ -29,5 +30,6 @@
 			</div>
 		</div>
 		<button class="btn btn-primary" type="submit">Submit form</button>
+		<!-- Form End -->
 	</sf:form>
 </div>
