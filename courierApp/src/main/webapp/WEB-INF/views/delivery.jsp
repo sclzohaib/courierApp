@@ -18,25 +18,25 @@
 		method="POST">
 
 		<div class="form-row">
-			<div class="col-md-4 mb-3">
+			<div class="col-md-3 mb-3">
 				<label for="id">ID</label>
 				<sf:input type="text" class="form-control" id="id" path="id" />
 			</div>
 		</div>
 
 		<div class="form-row">
-			<div class="col-md-4 mb-3">
+			<div class="col-md-3 mb-3">
 				<label for="dDate">Date</label>
 				<sf:input type="date" class="form-control" id="dDate" path="dDate" />
 			</div>
-			<div class="col-md-4 mb-3">
+			<div class="col-md-3 mb-3">
 				<label for="transportType">Transport Type</label>
 				<sf:input type="text" class="form-control" id="transportType"
 					path="transportType" />
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="col-md-4 mb-3">
+			<div class="col-md-3 mb-3">
 				<label for="vehicleNo">Vehicle Number</label>
 				<div class="input-group">
 					<sf:input type="text" class="form-control" id="vehicleNo"
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="col-md-6 mb-3">
+			<div class="col-md-3 mb-3">
 				<label for="route">Route</label>
 				<sf:input type="text" class="form-control" id="route" path="route" />
 			</div>

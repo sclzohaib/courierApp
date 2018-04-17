@@ -14,8 +14,8 @@
 		<li class="breadcrumb-item active">Setup</li>
 		<li class="breadcrumb-item active">Payment Mode</li>
 	</ol>
-	<sf:form modelAttribute="handInstr" action="${contextRoot}/hand-instr"
-		method="POST">
+	<sf:form modelAttribute="paymentMode"
+		action="${contextRoot}/payment-mode" method="POST">
 
 		<div class="form-row">
 			<div class="col-md-3 mb-3">

@@ -1,75 +1,75 @@
 package org.burkitech.courierApp.dto;
 
 import java.util.Date;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
-//@Entity
-//@Table(name="cs_city")
+@Entity
+@Table(name = "cs_city")
 public class City {
 
 	@Id
 	@Column(name = "CITY_NO")
 	private String cityNo;
-	
+
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
+
 	@Column(name = "AREA_NO")
 	private String areaNo;
-	
+
 	@Column(name = "PROD_ID")
 	private String productId;
-	
+
 	@Column(name = "SECTOR_ID")
 	private String serviceNo;
-	
+
 	@Column(name = "HUB_STAT")
 	private String hubstat;
-	
+
 	@Column(name = "HUB_NAME")
 	private String hubName;
-	
+
 	@Column(name = "CONTATCT_PERSON")
 	private String contactPerson;
-	
+
 	@Column(name = "DESIG")
 	private String designation;
-	
+
 	@Column(name = "ADDR1")
 	private String address1;
-	
+
 	@Column(name = "ADDR2")
 	private String address2;
-	
+
 	@Column(name = "ADDR3")
 	private String address3;
-	
+
 	@Column(name = "CONTRY_NO")
 	private String countryNo;
-	
+
 	@Column(name = "INTR_ADDR")
 	private String intrAddress;
-	
+
 	@Column(name = "PHONE")
 	private String phone;
-	
+
 	@Column(name = "FAX")
 	private String fax;
-	
+
 	@Column(name = "TELX")
 	private String telx;
-	
+
 	@Column(name = "STD_TIME")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date stdTime;
-	
+
 	@Column(name = "OSEC")
 	private String osec;
-	
+
 	@Column(name = "RBAG_HUB")
 	private String rbagHub;
 
@@ -242,6 +242,5 @@ public class City {
 				+ intrAddress + ", phone=" + phone + ", fax=" + fax + ", telx=" + telx + ", stdTime=" + stdTime
 				+ ", osec=" + osec + ", rbagHub=" + rbagHub + "]";
 	}
-	
-	
+
 }

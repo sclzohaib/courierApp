@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name = "cs_credit_card")
+@Entity
+@Table(name = "cs_credit_card")
 public class CreditCard {
 
 	@Id

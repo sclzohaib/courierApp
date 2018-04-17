@@ -2,23 +2,24 @@ package org.burkitech.courierApp.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "delivery_detail")
 public class DeliveryDetail {
-	
+	@Id
 	@Column(name = "delivery_sht_no")
 	private String id;
-	
+
 	private String item;
-	
+
 	@Column(name = "rec_name")
 	private String reciever;
-	
+
 	@Column(name = "rec_time")
 	private String recieveTime;
-	
+
 	@Column(name = "delivery_status")
 	private char status;
 
@@ -67,6 +68,5 @@ public class DeliveryDetail {
 		return "DeliveryDetail [id=" + id + ", item=" + item + ", reciever=" + reciever + ", recieveTime=" + recieveTime
 				+ ", status=" + status + "]";
 	}
-	
-	
+
 }

@@ -14,7 +14,7 @@
 		<li class="breadcrumb-item active">Setup</li>
 		<li class="breadcrumb-item active">Sector</li>
 	</ol>
-	<sf:form modelAttribute="handInstr" action="${contextRoot}/hand-instr"
+	<sf:form modelAttribute="sector" action="${contextRoot}/sector"
 		method="POST">
 
 		<div class="form-row">
@@ -28,23 +28,24 @@
 					path="description" />
 			</div>
 		</div>
-		
+
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
-				<label for="sectorTypeNo">SectorTypeNo</label>
-				<sf:input type="text" class="form-control" id="sectorTypeNo" path="sectorTypeNo" />
+				<label for="sectorTypeNo">Sector Type No</label>
+				<sf:input type="text" class="form-control" id="sectorTypeNo"
+					path="sectorTypeNo" />
 			</div>
 			<div class="col-md-3 mb-3">
 				<label for="stat">Stat</label>
-				<sf:input type="text" class="form-control" id="stat"
-					path="stat" />
+				<sf:input type="text" class="form-control" id="stat" path="stat" />
 			</div>
 		</div>
-		
+
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
-				<label for="statDate">StatDate</label>
-				<sf:input type="date" class="form-control" id="statDate" path="statDate" />
+				<label for="statDate">Stat Date</label>
+				<sf:input type="date" class="form-control" id="statDate"
+					path="statDate" />
 			</div>
 			<div class="col-md-3 mb-3">
 				<label for="remarks">Remarks</label>

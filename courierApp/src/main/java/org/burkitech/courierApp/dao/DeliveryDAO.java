@@ -5,5 +5,6 @@ import org.burkitech.courierApp.dto.DeliveryDetail;
 
 public interface DeliveryDAO {
 	boolean add(Delivery delivery);
+
 	boolean addDetail(DeliveryDetail deliveryDetail);
 }

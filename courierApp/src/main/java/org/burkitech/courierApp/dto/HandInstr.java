@@ -16,12 +16,12 @@ public class HandInstr {
 	@Column(name = "DESCRIPTION")
 	private String description;
 
-	public String getHndId() {
+	public String getId() {
 		return Id;
 	}
 
-	public void setHndId(String Id) {
-		this.Id = Id;
+	public void setId(String id) {
+		Id = id;
 	}
 
 	public String getDescription() {

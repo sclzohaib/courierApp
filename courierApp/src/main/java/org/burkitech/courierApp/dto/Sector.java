@@ -42,7 +42,7 @@ public class Sector {
 
 
 	@Column(name = "REMARKS")
-	private Date remarks;
+	private String remarks;
 
 
 	public String getId() {
@@ -84,13 +84,12 @@ public class Sector {
 		this.stat = stat;
 	}
 
-
-	public Date getRemarks() {
+	public String getRemarks() {
 		return remarks;
 	}
 
 
-	public void setRemarks(Date remarks) {
+	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
 

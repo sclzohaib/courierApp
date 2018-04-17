@@ -39,25 +39,9 @@ public class Product {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date appDate;
 
-	private Date getAppDate() {
-		return appDate;
-	}
-
-	private void setAppDate(Date appDate) {
-		this.appDate = appDate;
-	}
-
 	@Column(name = "EXP_DAT")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expDate;
-
-	private Date getExpDate() {
-		return expDate;
-	}
-
-	private void setExpDate(Date expDate) {
-		this.expDate = expDate;
-	}
 
 	@Column(name = "STAT")
 	private String stat;
@@ -65,14 +49,6 @@ public class Product {
 	@Column(name = "STAT_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date statDate;
-
-	private Date getStatDate() {
-		return statDate;
-	}
-
-	private void setStatDate(Date statDate) {
-		this.statDate = statDate;
-	}
 
 	@Column(name = "REMARKS")
 	private String remarks;
@@ -87,100 +63,124 @@ public class Product {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date ovrdDate;
 
-	private Date getOvrdDate() {
-		return ovrdDate;
-	}
-
-	private void setOvrdDate(Date ovrdDate) {
-		this.ovrdDate = ovrdDate;
-	}
-
-	private String getId() {
+	public String getId() {
 		return Id;
 	}
 
-	private void setId(String id) {
+	public void setId(String id) {
 		Id = id;
 	}
 
-	private String getDescription() {
+	public String getDescription() {
 		return description;
 	}
 
-	private void setDescription(String description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	private String getPartFlag() {
+	public String getPartFlag() {
 		return partFlag;
 	}
 
-	private void setPartFlag(String partFlag) {
+	public void setPartFlag(String partFlag) {
 		this.partFlag = partFlag;
 	}
 
-	private long getCommPrct() {
+	public long getCommPrct() {
 		return commPrct;
 	}
 
-	private void setCommPrct(long commPrct) {
+	public void setCommPrct(long commPrct) {
 		this.commPrct = commPrct;
 	}
 
-	private long getPartAmount() {
+	public long getPartAmount() {
 		return partAmount;
 	}
 
-	private void setPartAmount(long partAmount) {
+	public void setPartAmount(long partAmount) {
 		this.partAmount = partAmount;
 	}
 
-	private long getGst() {
+	public long getGst() {
 		return gst;
 	}
 
-	private void setGst(long gst) {
+	public void setGst(long gst) {
 		this.gst = gst;
 	}
 
-	private String getExclusive() {
+	public String getExclusive() {
 		return exclusive;
 	}
 
-	private void setExclusive(String exclusive) {
+	public void setExclusive(String exclusive) {
 		this.exclusive = exclusive;
 	}
 
-	private String getStat() {
+	public Date getAppDate() {
+		return appDate;
+	}
+
+	public void setAppDate(Date appDate) {
+		this.appDate = appDate;
+	}
+
+	public Date getExpDate() {
+		return expDate;
+	}
+
+	public void setExpDate(Date expDate) {
+		this.expDate = expDate;
+	}
+
+	public String getStat() {
 		return stat;
 	}
 
-	private void setStat(String stat) {
+	public void setStat(String stat) {
 		this.stat = stat;
 	}
 
-	private String getRemarks() {
+	public Date getStatDate() {
+		return statDate;
+	}
+
+	public void setStatDate(Date statDate) {
+		this.statDate = statDate;
+	}
+
+	public String getRemarks() {
 		return remarks;
 	}
 
-	private void setRemarks(String remarks) {
+	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
 
-	private String getGlCode() {
+	public String getGlCode() {
 		return glCode;
 	}
 
-	private void setGlCode(String glCode) {
+	public void setGlCode(String glCode) {
 		this.glCode = glCode;
 	}
 
-	private String getChkDgt() {
+	public String getChkDgt() {
 		return chkDgt;
 	}
 
-	private void setChkDgt(String chkDgt) {
+	public void setChkDgt(String chkDgt) {
 		this.chkDgt = chkDgt;
+	}
+
+	public Date getOvrdDate() {
+		return ovrdDate;
+	}
+
+	public void setOvrdDate(Date ovrdDate) {
+		this.ovrdDate = ovrdDate;
 	}
 
 	@Override
@@ -190,5 +190,4 @@ public class Product {
 				+ appDate + ", expDate=" + expDate + ", stat=" + stat + ", statDate=" + statDate + ", remarks="
 				+ remarks + ", glCode=" + glCode + ", chkDgt=" + chkDgt + ", ovrdDate=" + ovrdDate + "]";
 	}
-
 }

@@ -32,6 +32,69 @@
 	<!-- Navigation -->
 	<%@include file="./shared/navbar.jsp"%>
 	<!-- Page Content -->
+	<c:if test="${userClickEmployee==true}">
+		<%@include file="employee.jsp"%>
+	</c:if>
+	<c:if test="${userClickManifest==true}">
+		<%@include file="manifest.jsp"%>
+	</c:if>
+	<c:if test="${userClickDelivery==true}">
+		<%@include file="delivery.jsp"%>
+	</c:if>
+	<c:if test="${userClickDeliveryDetail==true}">
+		<%@include file="deliveryDetail.jsp"%>
+	</c:if>
+	<c:if test="${userClickBookInfo==true}">
+		<%@include file="book-info.jsp"%>
+	</c:if>
+	<c:if test="${userClickCity==true}">
+		<%@include file="city.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickCreditCard==true}">
+		<%@include file="creditcard.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickCustomer==true}">
+		<%@include file="customer.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickCustomerTarrif==true}">
+		<%@include file="customerTarrif.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickHandInstr==true}">
+		<%@include file="handInstr.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickIntSector==true}">
+		<%@include file="intSector.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickItem==true}">
+		<%@include file="item.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickItems==true}">
+		<%@include file="items.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickPaymentMode==true}">
+		<%@include file="paymentMode.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickProduct==true}">
+		<%@include file="product.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickSector==true}">
+		<%@include file="sector.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickService==true}">
+		<%@include file="service.jsp"%>
+	</c:if>
+
 	<c:if test="${userClickHome==true}">
 		<%@include file="home.jsp"%>
 	</c:if>
@@ -47,15 +110,6 @@
 
 	<c:if test="${userClickServices==true}">
 		<%@include file="services.jsp"%>
-	</c:if>
-	<c:if test="${userClickEmployee==true}">
-		<%@include file="employee.jsp"%>
-	</c:if>
-	<c:if test="${userClickManifest==true}">
-		<%@include file="manifest.jsp"%>
-	</c:if>
-	<c:if test="${userClickDelivery==true}">
-		<%@include file="delivery.jsp"%>
 	</c:if>
 
 	<c:if test="${userClickPortfolio1Col==true}">
@@ -108,6 +162,9 @@
 	<c:if test="${userClickPricing==true}">
 		<%@include file="pricing.jsp"%>
 	</c:if>
+
+
+
 	<!-- /.container -->
 
 	<!-- Footer -->

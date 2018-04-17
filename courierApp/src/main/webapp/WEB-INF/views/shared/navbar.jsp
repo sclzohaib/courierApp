@@ -42,15 +42,26 @@
 						<a class="dropdown-item" href="${contextRoot}/manifest">Manifest</a>
 						<a class="dropdown-item" href="${contextRoot}/delivery">Delivery</a>
 					</div></li>
-<li class="nav-item dropdown"><a
+				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownPortfolio" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false"> Setup </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdownPortfolio">
-						<a class="dropdown-item" href="${contextRoot}/employee">Book Info</a>
-						<a class="dropdown-item" href="${contextRoot}/manifest">Book Detail</a>
-						<a class="dropdown-item" href="${contextRoot}/delivery">City</a>
+						<a class="dropdown-item" href="${contextRoot}/book-info">Book
+							Info</a> <a class="dropdown-item" href="${contextRoot}/manifest">Book
+							Detail</a> <a class="dropdown-item" href="${contextRoot}/city">City</a>
+						<a class="dropdown-item" href="${contextRoot}/creditcard">Credit
+							Card</a> <a class="dropdown-item" href="${contextRoot}/customer">Customer</a>
+						<a class="dropdown-item" href="${contextRoot}/customer-tarrif">Customer
+							Tarrif</a> <a class="dropdown-item" href="${contextRoot}/hand-instr">Hand
+							Instr</a> <a class="dropdown-item" href="${contextRoot}/int-sector">Int
+							Sector</a> <a class="dropdown-item" href="${contextRoot}/item">Item</a>
+						<a class="dropdown-item" href="${contextRoot}/items">Items</a> <a
+							class="dropdown-item" href="${contextRoot}/payment-mode">Payment
+							Mode</a> <a class="dropdown-item" href="${contextRoot}/product">Product</a>
+						<a class="dropdown-item" href="${contextRoot}/sector">Sector</a> <a
+							class="dropdown-item" href="${contextRoot}/service">Service</a>
 					</div></li>
 
 				<li class="nav-item dropdown"><a

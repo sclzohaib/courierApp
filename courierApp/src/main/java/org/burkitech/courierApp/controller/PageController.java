@@ -2,17 +2,39 @@ package org.burkitech.courierApp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
 import org.burkitech.courierApp.dao.BookInfoDAO;
+import org.burkitech.courierApp.dao.CityDAO;
+import org.burkitech.courierApp.dao.CreditCardDAO;
+import org.burkitech.courierApp.dao.CustomerDAO;
+import org.burkitech.courierApp.dao.CustomerTarrifDAO;
 import org.burkitech.courierApp.dao.DeliveryDAO;
 import org.burkitech.courierApp.dao.EmployeeDAO;
+import org.burkitech.courierApp.dao.HandInstrDAO;
+import org.burkitech.courierApp.dao.IntSectorDAO;
+import org.burkitech.courierApp.dao.ItemDAO;
 import org.burkitech.courierApp.dao.ManifestDAO;
+import org.burkitech.courierApp.dao.PaymentModeDAO;
+import org.burkitech.courierApp.dao.ProductDAO;
+import org.burkitech.courierApp.dao.SectorDAO;
+import org.burkitech.courierApp.dao.ServiceDAO;
 import org.burkitech.courierApp.dto.BookInfo;
+import org.burkitech.courierApp.dto.City;
+import org.burkitech.courierApp.dto.CreditCard;
+import org.burkitech.courierApp.dto.Customer;
+import org.burkitech.courierApp.dto.CustomerTarrif;
 import org.burkitech.courierApp.dto.Delivery;
 import org.burkitech.courierApp.dto.DeliveryDetail;
 import org.burkitech.courierApp.dto.Employee;
+import org.burkitech.courierApp.dto.HandInstr;
+import org.burkitech.courierApp.dto.IntSector;
+import org.burkitech.courierApp.dto.Item;
+import org.burkitech.courierApp.dto.Items;
 import org.burkitech.courierApp.dto.Manifest;
 import org.burkitech.courierApp.dto.ManifestDetail;
+import org.burkitech.courierApp.dto.PaymentMode;
+import org.burkitech.courierApp.dto.Product;
+import org.burkitech.courierApp.dto.Sector;
+import org.burkitech.courierApp.dto.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +58,39 @@ public class PageController {
 
 	@Autowired
 	private BookInfoDAO bookInfoDAO;
+
+	@Autowired
+	private CityDAO cityDAO;
+
+	@Autowired
+	private CreditCardDAO creditCardDAO;
+
+	@Autowired
+	private CustomerDAO customerDAO;
+
+	@Autowired
+	private CustomerTarrifDAO customerTarrifDAO;
+
+	@Autowired
+	private HandInstrDAO handInstrDAO;
+
+	@Autowired
+	private IntSectorDAO intSectorDAO;
+
+	@Autowired
+	private ItemDAO itemDAO;
+
+	@Autowired
+	private PaymentModeDAO paymentModeDAO;
+
+	@Autowired
+	private ProductDAO productDAO;
+
+	@Autowired
+	private SectorDAO sectorDAO;
+
+	@Autowired
+	private ServiceDAO serviceDAO;
 
 	// ------------------------------------------------------------
 	// Pages
@@ -192,9 +247,10 @@ public class PageController {
 		return mv;
 
 	}
+
 	// ------------------------------------------------------------
-		// Employee from
-		// ------------------------------------------------------------
+	// Employee from
+	// ------------------------------------------------------------
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public ModelAndView employee() {
 		ModelAndView mv = new ModelAndView("page");
@@ -217,9 +273,10 @@ public class PageController {
 		employeeDAO.add(mEmployee);
 		return "redirect:/employee";
 	}
+
 	// ------------------------------------------------------------
-		// menifest form
-		// ------------------------------------------------------------
+	// menifest form
+	// ------------------------------------------------------------
 	@RequestMapping(value = "/manifest", method = RequestMethod.GET)
 	public ModelAndView manifest() {
 		ModelAndView mv = new ModelAndView("page");
@@ -241,6 +298,7 @@ public class PageController {
 		manifestDAO.add(mManifest);
 		return "redirect:/manifest";
 	}
+
 	// ------------------------------------------------------------
 	// menifest detail form
 	// ------------------------------------------------------------
@@ -265,6 +323,7 @@ public class PageController {
 		manifestDAO.addDetail(mManifestDetail);
 		return "redirect:/manifest_detail";
 	}
+
 	// ------------------------------------------------------------
 	// delivery form
 	// ------------------------------------------------------------
@@ -283,13 +342,14 @@ public class PageController {
 	public String addDelivery(@Valid @ModelAttribute("delivery") Delivery mDelivery, BindingResult results, Model model,
 			HttpServletRequest request) {
 		if (results.hasErrors()) {
-			model.addAttribute("userClickDelivery", true);
-			model.addAttribute("title", "Delivery");
+			model.addAttribute("userClickDeliveryDetail", true);
+			model.addAttribute("title", "Delivery Detail");
 			return "page";
 		}
-		deliveryDAO.add(mDelivery);
-		return "redirect:/delivery";
+		// deliveryDAO.add(mDelivery);
+		return "redirect:/delivery-detail";
 	}
+
 	// ------------------------------------------------------------
 	// delivery detail form
 	// ------------------------------------------------------------
@@ -313,8 +373,9 @@ public class PageController {
 			return "page";
 		}
 		deliveryDAO.addDetail(mDeliveryDetail);
-		return "redirect:/delivery_detail";
+		return "redirect:/delivery-detail";
 	}
+
 	// ------------------------------------------------------------
 	// book info form
 	// ------------------------------------------------------------
@@ -340,4 +401,317 @@ public class PageController {
 		bookInfoDAO.add(mBookInfo);
 		return "redirect:/book-info";
 	}
+
+	// ------------------------------------------------------------
+	// City from
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/city", method = RequestMethod.GET)
+	public ModelAndView city() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "City");
+		mv.addObject("userClickCity", true);
+		City nCity = new City();
+		mv.addObject("city", nCity);
+		return mv;
+	}
+
+	@RequestMapping(value = "/city", method = RequestMethod.POST)
+	public String addcity(@Valid @ModelAttribute("city") City nCity, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickCity", true);
+			model.addAttribute("title", "City");
+			return "page";
+		}
+
+		cityDAO.add(nCity);
+		return "redirect:/city";
+	}
+
+	// ------------------------------------------------------------
+	// Creditcard form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/creditcard", method = RequestMethod.GET)
+	public ModelAndView creditcard() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Credit Card");
+		mv.addObject("userClickCreditCard", true);
+		CreditCard nCreditCard = new CreditCard();
+		mv.addObject("creditcard", nCreditCard);
+		return mv;
+	}
+
+	@RequestMapping(value = "/creditcard", method = RequestMethod.POST)
+	public String addcreditcard(@Valid @ModelAttribute("creditcard") CreditCard nCreditCard, BindingResult results,
+			Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickCreditCard", true);
+			model.addAttribute("title", "Credit Card");
+			return "page";
+		}
+
+		creditCardDAO.add(nCreditCard);
+		return "redirect:/creditcard";
+	}
+
+	// ------------------------------------------------------------
+	// Customer form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/customer", method = RequestMethod.GET)
+	public ModelAndView customer() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Customer");
+		mv.addObject("userClickCustomer", true);
+		Customer nCustomer = new Customer();
+		mv.addObject("customer", nCustomer);
+		return mv;
+	}
+
+	@RequestMapping(value = "/customer", method = RequestMethod.POST)
+	public String addcustomer(@Valid @ModelAttribute("customer") Customer nCustomer, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickCustomer", true);
+			model.addAttribute("title", "Customer");
+			return "page";
+		}
+
+		customerDAO.add(nCustomer);
+		return "redirect:/customer";
+	}
+
+	// ------------------------------------------------------------
+	// Customer Tarrif form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/customer-tarrif", method = RequestMethod.GET)
+	public ModelAndView customerTarrif() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Customer Tarrif");
+		mv.addObject("userClickCustomerTarrif", true);
+		CustomerTarrif nCustomerTarrif = new CustomerTarrif();
+		mv.addObject("customerTarrif", nCustomerTarrif);
+		return mv;
+	}
+
+	@RequestMapping(value = "/customer-tarrif", method = RequestMethod.POST)
+	public String addcustomerTarrif(@Valid @ModelAttribute("customerTarrif") CustomerTarrif nCustomerTarrif,
+			BindingResult results, Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickCustomerTarrif", true);
+			model.addAttribute("title", "Customer Tarrif");
+			return "page";
+		}
+
+		customerTarrifDAO.add(nCustomerTarrif);
+		return "redirect:/customer-tarrif";
+	}
+
+	// ------------------------------------------------------------
+	// Hand Instr form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/hand-instr", method = RequestMethod.GET)
+	public ModelAndView handInstr() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Hand Instr");
+		mv.addObject("userClickHandInstr", true);
+		HandInstr nHandInstr = new HandInstr();
+		mv.addObject("handInstr", nHandInstr);
+		return mv;
+	}
+
+	@RequestMapping(value = "/hand-instr", method = RequestMethod.POST)
+	public String addhandInstr(@Valid @ModelAttribute("handInstr") HandInstr nHandInstr, BindingResult results,
+			Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickHandInstr", true);
+			model.addAttribute("title", "Hand Instr");
+			return "page";
+		}
+
+		handInstrDAO.add(nHandInstr);
+		return "redirect:/hand-instr";
+	}
+
+	// ------------------------------------------------------------
+	// Int Sector form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/int-sector", method = RequestMethod.GET)
+	public ModelAndView intSector() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Int Sector");
+		mv.addObject("userClickIntSector", true);
+		IntSector nIntSector = new IntSector();
+		mv.addObject("intSector", nIntSector);
+		return mv;
+	}
+
+	@RequestMapping(value = "/int-sector", method = RequestMethod.POST)
+	public String addintSector(@Valid @ModelAttribute("intSector") IntSector nIntSector, BindingResult results,
+			Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickIntSector", true);
+			model.addAttribute("title", "Int Sector");
+			return "page";
+		}
+
+		intSectorDAO.add(nIntSector);
+		return "redirect:/int-sector";
+	}
+
+	// ------------------------------------------------------------
+	// Item form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/item", method = RequestMethod.GET)
+	public ModelAndView item() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Item");
+		mv.addObject("userClickItem", true);
+		Item nItem = new Item();
+		mv.addObject("item", nItem);
+		return mv;
+	}
+
+	@RequestMapping(value = "/item", method = RequestMethod.POST)
+	public String addItem(@Valid @ModelAttribute("item") Item nItem, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickItem", true);
+			model.addAttribute("title", "Item");
+			return "page";
+		}
+
+		itemDAO.add(nItem);
+		return "redirect:/item";
+	}
+
+	// ------------------------------------------------------------
+	// Items form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/items", method = RequestMethod.GET)
+	public ModelAndView items() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Items");
+		mv.addObject("userClickItems", true);
+		Items nItems = new Items();
+		mv.addObject("items", nItems);
+		return mv;
+	}
+
+	@RequestMapping(value = "/items", method = RequestMethod.POST)
+	public String addItems(@Valid @ModelAttribute("items") Items nItems, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickItems", true);
+			model.addAttribute("title", "Items");
+			return "page";
+		}
+
+		itemDAO.addItems(nItems);
+		return "redirect:/items";
+	}
+
+	// ------------------------------------------------------------
+	// Payment Mode form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/payment-mode", method = RequestMethod.GET)
+	public ModelAndView paymentMode() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Payment Mode");
+		mv.addObject("userClickPaymentMode", true);
+		PaymentMode nPaymentMode = new PaymentMode();
+		mv.addObject("paymentMode", nPaymentMode);
+		return mv;
+	}
+
+	@RequestMapping(value = "/payment-mode", method = RequestMethod.POST)
+	public String addpaymentMode(@Valid @ModelAttribute("paymentMode") PaymentMode nPaymentMode, BindingResult results,
+			Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickPaymentMode", true);
+			model.addAttribute("title", "Payment Mode");
+			return "page";
+		}
+
+		paymentModeDAO.add(nPaymentMode);
+		return "redirect:/payment-mode";
+	}
+
+	// ------------------------------------------------------------
+	// Product form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/product", method = RequestMethod.GET)
+	public ModelAndView product() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Product");
+		mv.addObject("userClickProduct", true);
+		Product nProduct = new Product();
+		mv.addObject("product", nProduct);
+		return mv;
+	}
+
+	@RequestMapping(value = "/product", method = RequestMethod.POST)
+	public String addproduct(@Valid @ModelAttribute("product") Product nProduct, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickProduct", true);
+			model.addAttribute("title", "Product");
+			return "page";
+		}
+
+		productDAO.add(nProduct);
+		return "redirect:/product";
+	}
+
+	// ------------------------------------------------------------
+	// Sector form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/sector", method = RequestMethod.GET)
+	public ModelAndView sector() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Sector");
+		mv.addObject("userClickSector", true);
+		Sector nSector = new Sector();
+		mv.addObject("sector", nSector);
+		return mv;
+	}
+
+	@RequestMapping(value = "/sector", method = RequestMethod.POST)
+	public String addsector(@Valid @ModelAttribute("sector") Sector mSector, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickSector", true);
+			model.addAttribute("title", "Sector");
+			return "page";
+		}
+
+		sectorDAO.add(mSector);
+		return "redirect:/sector";
+	}
+
+	// ------------------------------------------------------------
+	// Service form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/service", method = RequestMethod.GET)
+	public ModelAndView service() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Service");
+		mv.addObject("userClickService", true);
+		Service nService = new Service();
+		mv.addObject("service", nService);
+		return mv;
+	}
+
+	@RequestMapping(value = "/service", method = RequestMethod.POST)
+	public String addservice(@Valid @ModelAttribute("service") Service mService, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickService", true);
+			model.addAttribute("title", "Service");
+			return "page";
+		}
+
+		serviceDAO.add(mService);
+		return "redirect:/service";
+	}
+
 }

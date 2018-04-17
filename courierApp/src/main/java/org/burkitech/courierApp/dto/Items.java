@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "CS_ITEMS")
 public class Items {
@@ -14,16 +16,16 @@ public class Items {
 	@Id
 	@Column(name = "AWB_NO")
 	private String awbNo;
-	
+
 	@Column(name = "ITEM_CODE")
 	private String itemCode;
-	
+
 	@Column(name = "QTY")
 	private long qty;
-	
+
 	@Column(name = "CHARGES")
 	private long charges;
-	
+
 	@Column(name = "DELIVERY_CHARGES")
 	private long deliveryCharges;
 
@@ -31,6 +33,7 @@ public class Items {
 	private long sprate;
 
 	@Column(name = "ITEMS_CALLDATE")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date itemsCalldate;
 
 	public Date getItemsCalldate() {
@@ -95,6 +98,5 @@ public class Items {
 				+ ", deliveryCharges=" + deliveryCharges + ", sprate=" + sprate + ", itemsCalldate=" + itemsCalldate
 				+ "]";
 	}
-	
-	
+
 }

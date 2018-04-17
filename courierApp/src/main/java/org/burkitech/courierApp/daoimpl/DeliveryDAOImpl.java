@@ -10,9 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository("deliveryDAO")
 @Transactional
-public class DeliveryDAOImpl implements DeliveryDAO{
+public class DeliveryDAOImpl implements DeliveryDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
+
 	@Override
 	public boolean add(Delivery delivery) {
 		try {
@@ -25,6 +26,7 @@ public class DeliveryDAOImpl implements DeliveryDAO{
 			return false;
 		}
 	}
+
 	@Override
 	public boolean addDetail(DeliveryDetail deliveryDetail) {
 		try {

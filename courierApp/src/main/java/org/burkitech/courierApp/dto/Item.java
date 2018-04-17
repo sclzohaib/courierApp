@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "CS_ITEM")
 public class Item {
@@ -14,52 +16,53 @@ public class Item {
 	@Id
 	@Column(name = "ITEM_CODE")
 	private String itemCode;
-	
+
 	@Column(name = "CLASS_CODE")
 	private String classCode;
-	
+
 	@Column(name = "GL_CODE")
 	private String glCode;
 
 	@Column(name = "PRFRD_VEND")
 	private String prfrdVend;
-	
+
 	@Column(name = "LOC_CODE")
 	private String locationCode;
-	
+
 	@Column(name = "UOM")
 	private String uom;
-	
+
 	@Column(name = "NAME")
 	private String name;
-	
+
 	@Column(name = "SELL_PRICE")
 	private long sellPrice;
-	
+
 	@Column(name = "AVG_PUR_RATE")
 	private long avgPurRate;
-	
+
 	@Column(name = "ITEM_STAT")
 	private String itemStat;
-	
+
 	@Column(name = "OPEN_QTY")
 	private long openQuantity;
-	
+
 	@Column(name = "RE_ORD_LVL")
 	private long reOrderLevel;
-	
+
 	@Column(name = "MAX_ORD_QTY")
 	private long maxOrderQuantity;
-	
+
 	@Column(name = "YTD_REC")
 	private long ytdRec;
-	
+
 	@Column(name = "YTD_ISU")
 	private long ytdIsu;
-	
+
 	@Column(name = "LAST_ISU_DATE")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date lastIsuDate;
-	
+
 	public Date getLastIsuDate() {
 		return lastIsuDate;
 	}
@@ -70,143 +73,143 @@ public class Item {
 
 	@Column(name = "EMP_ID")
 	private String employeeId;
-	
+
 	@Column(name = "CITY_CODE")
 	private String cityCode;
 
-	private String getItemCode() {
+	public String getItemCode() {
 		return itemCode;
 	}
 
-	private void setItemCode(String itemCode) {
+	public void setItemCode(String itemCode) {
 		this.itemCode = itemCode;
 	}
 
-	private String getClassCode() {
+	public String getClassCode() {
 		return classCode;
 	}
 
-	private void setClassCode(String classCode) {
+	public void setClassCode(String classCode) {
 		this.classCode = classCode;
 	}
 
-	private String getGlCode() {
+	public String getGlCode() {
 		return glCode;
 	}
 
-	private void setGlCode(String glCode) {
+	public void setGlCode(String glCode) {
 		this.glCode = glCode;
 	}
 
-	private String getPrfrdVend() {
+	public String getPrfrdVend() {
 		return prfrdVend;
 	}
 
-	private void setPrfrdVend(String prfrdVend) {
+	public void setPrfrdVend(String prfrdVend) {
 		this.prfrdVend = prfrdVend;
 	}
 
-	private String getLocationCode() {
+	public String getLocationCode() {
 		return locationCode;
 	}
 
-	private void setLocationCode(String locationCode) {
+	public void setLocationCode(String locationCode) {
 		this.locationCode = locationCode;
 	}
 
-	private String getUom() {
+	public String getUom() {
 		return uom;
 	}
 
-	private void setUom(String uom) {
+	public void setUom(String uom) {
 		this.uom = uom;
 	}
 
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 
-	private void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	private long getSellPrice() {
+	public long getSellPrice() {
 		return sellPrice;
 	}
 
-	private void setSellPrice(long sellPrice) {
+	public void setSellPrice(long sellPrice) {
 		this.sellPrice = sellPrice;
 	}
 
-	private long getAvgPurRate() {
+	public long getAvgPurRate() {
 		return avgPurRate;
 	}
 
-	private void setAvgPurRate(long avgPurRate) {
+	public void setAvgPurRate(long avgPurRate) {
 		this.avgPurRate = avgPurRate;
 	}
 
-	private String getItemStat() {
+	public String getItemStat() {
 		return itemStat;
 	}
 
-	private void setItemStat(String itemStat) {
+	public void setItemStat(String itemStat) {
 		this.itemStat = itemStat;
 	}
 
-	private long getOpenQuantity() {
+	public long getOpenQuantity() {
 		return openQuantity;
 	}
 
-	private void setOpenQuantity(long openQuantity) {
+	public void setOpenQuantity(long openQuantity) {
 		this.openQuantity = openQuantity;
 	}
 
-	private long getReOrderLevel() {
+	public long getReOrderLevel() {
 		return reOrderLevel;
 	}
 
-	private void setReOrderLevel(long reOrderLevel) {
+	public void setReOrderLevel(long reOrderLevel) {
 		this.reOrderLevel = reOrderLevel;
 	}
 
-	private long getMaxOrderQuantity() {
+	public long getMaxOrderQuantity() {
 		return maxOrderQuantity;
 	}
 
-	private void setMaxOrderQuantity(long maxOrderQuantity) {
+	public void setMaxOrderQuantity(long maxOrderQuantity) {
 		this.maxOrderQuantity = maxOrderQuantity;
 	}
 
-	private long getYtdRec() {
+	public long getYtdRec() {
 		return ytdRec;
 	}
 
-	private void setYtdRec(long ytdRec) {
+	public void setYtdRec(long ytdRec) {
 		this.ytdRec = ytdRec;
 	}
 
-	private long getYtdIsu() {
+	public long getYtdIsu() {
 		return ytdIsu;
 	}
 
-	private void setYtdIsu(long ytdIsu) {
+	public void setYtdIsu(long ytdIsu) {
 		this.ytdIsu = ytdIsu;
 	}
 
-	private String getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	private void setEmployeeId(String employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 
-	private String getCityCode() {
+	public String getCityCode() {
 		return cityCode;
 	}
 
-	private void setCityCode(String cityCode) {
+	public void setCityCode(String cityCode) {
 		this.cityCode = cityCode;
 	}
 
@@ -219,6 +222,4 @@ public class Item {
 				+ ", ytdIsu=" + ytdIsu + ", lastIsuDate=" + lastIsuDate + ", employeeId=" + employeeId + ", cityCode="
 				+ cityCode + "]";
 	}
-	
-	
 }

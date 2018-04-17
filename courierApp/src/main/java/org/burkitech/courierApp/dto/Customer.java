@@ -3,12 +3,14 @@ package org.burkitech.courierApp.dto;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-//@Entity
-//@Table(name = "CS_customer")
+@Entity
+@Table(name = "CS_customer")
 public class Customer {
 	@Id
 	@Column(name = "CUST_ID")
@@ -171,11 +173,11 @@ public class Customer {
 		this.customerID = customerID;
 	}
 
-	public String getIntNo() {
+	public String getIndNo() {
 		return indNo;
 	}
 
-	public void setIntNo(String indNo) {
+	public void setIndNo(String indNo) {
 		this.indNo = indNo;
 	}
 
@@ -471,14 +473,14 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [customerID=" + customerID + ", intNo=" + indNo + ", registrationDate=" + registrationDate
-				+ ", closeDate=" + closeDate + ", expiredDate=" + expiredDate
-				+ ", accFee=" + accFee + ", serviceCharges=" + serviceCharges + ", recTerId=" + recTerId + ", feeFlag="
-				+ feeFlag + ", billingStatus=" + billingStatus + ", pinNO=" + pinNO + ", stat=" + stat
-				+ ", billingCust=" + billingCust + ", trtyCode=" + trtyCode + ", handlingExempt=" + handlingExempt
-				+ ", trfYear=" + trfYear + ", bankCode=" + bankCode + ", employeeId=" + employeeId + ", octroiExempt="
-				+ octroiExempt + ", cusGst=" + cusGst + ", discountFlag=" + discountFlag + ", address1=" + address1
-				+ ", address2=" + address2 + ", address3=" + address3 + ", designation=" + designation + ", intAddess="
-				+ intAddess + ", customerId2=" + customerId2 + ", contPer=" + contPer + ", customerName=" + customerName
+				+ ", closeDate=" + closeDate + ", expiredDate=" + expiredDate + ", accFee=" + accFee
+				+ ", serviceCharges=" + serviceCharges + ", recTerId=" + recTerId + ", feeFlag=" + feeFlag
+				+ ", billingStatus=" + billingStatus + ", pinNO=" + pinNO + ", stat=" + stat + ", billingCust="
+				+ billingCust + ", trtyCode=" + trtyCode + ", handlingExempt=" + handlingExempt + ", trfYear=" + trfYear
+				+ ", bankCode=" + bankCode + ", employeeId=" + employeeId + ", octroiExempt=" + octroiExempt
+				+ ", cusGst=" + cusGst + ", discountFlag=" + discountFlag + ", address1=" + address1 + ", address2="
+				+ address2 + ", address3=" + address3 + ", designation=" + designation + ", intAddess=" + intAddess
+				+ ", customerId2=" + customerId2 + ", contPer=" + contPer + ", customerName=" + customerName
 				+ ", pcusNo=" + pcusNo + ", creditAmountLimit=" + creditAmountLimit + ", invTypeNo=" + invTypeNo
 				+ ", discountBott=" + discountBott + ", creditDays=" + creditDays + ", creditDaysLimit="
 				+ creditDaysLimit + ", cityNo=" + cityNo + ", employeeId2=" + employeeId2 + ", routeNo=" + routeNo

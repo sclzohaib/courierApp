@@ -14,14 +14,13 @@
 		<li class="breadcrumb-item active">Setup</li>
 		<li class="breadcrumb-item active">Service</li>
 	</ol>
-	<sf:form modelAttribute="handInstr" action="${contextRoot}/hand-instr"
+	<sf:form modelAttribute="service" action="${contextRoot}/service"
 		method="POST">
-
-		
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
-				<label for="serviceCode">ServiceCode</label>
-				<sf:input type="text" class="form-control" id="serviceCode" path="serviceCode" />
+				<label for="serviceCode">Service Code</label>
+				<sf:input type="text" class="form-control" id="serviceCode"
+					path="serviceCode" />
 			</div>
 			<div class="col-md-3 mb-3">
 				<label for="description">Description</label>
@@ -29,24 +28,25 @@
 					path="description" />
 			</div>
 		</div>
-		
+
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
-				<label for="productId">ProductId</label>
-				<sf:input type="text" class="form-control" id="productId" path="productId" />
+				<label for="productId">Product ID</label>
+				<sf:input type="text" class="form-control" id="productId"
+					path="productId" />
 			</div>
 			<div class="col-md-3 mb-3">
 				<label for="status">Status</label>
-				<sf:input type="text" class="form-control" id="status"
-					path="status" />
+				<sf:input type="text" class="form-control" id="status" path="status" />
 			</div>
 		</div>
-		
+
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
 				<label for="remarks">Remarks</label>
-				<sf:input type="text" class="form-control" id="remarks" path="remarks" />
-		</div>>
+				<sf:input type="text" class="form-control" id="remarks"
+					path="remarks" />
+			</div>
 		</div>
 		<button class="btn btn-primary" type="submit">Submit form</button>
 	</sf:form>

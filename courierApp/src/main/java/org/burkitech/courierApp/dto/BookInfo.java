@@ -9,8 +9,8 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-//@Entity
-//@Table(name = "cs_book_info")
+@Entity
+@Table(name = "cs_book_info")
 public class BookInfo {
 
 	@Id
@@ -197,16 +197,16 @@ public class BookInfo {
 	@Column(name = "BILL_CALLDATE")
 	private String billCallDate;
 
+	public String getBillRef() {
+		return billRef;
+	}
+
 	public String getAwbNo() {
 		return awbNo;
 	}
 
 	public void setAwbNo(String awbNo) {
 		this.awbNo = awbNo;
-	}
-
-	public String getBillRef() {
-		return billRef;
 	}
 
 	public void setBillRef(String billRef) {

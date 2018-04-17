@@ -3,7 +3,7 @@
 
 	<!-- Page Heading/Breadcrumbs -->
 	<h1 class="mt-4 mb-3">
-		Contact <small>Subheading</small>
+		Contact <small>Burkitech Courier</small>
 	</h1>
 
 	<ol class="breadcrumb">
@@ -16,21 +16,27 @@
 		<!-- Map Column -->
 		<div class="col-lg-8 mb-4">
 			<!-- Embedded Google Map -->
-			<iframe width="100%" height="400px" frameborder="0" scrolling="no"
+			<!--<iframe width="100%" height="400px" frameborder="0" scrolling="no"
 				marginheight="0" marginwidth="0"
 				src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+		-->
+			<iframe width="100%" height="400px" frameborder="0" style="border: 0"
+				src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJQWGdnI4-sz4RpPnDRp5suHw&destination=place_id:ChIJQWGdnI4-sz4RpPnDRp5suHw&key=AIzaSyCjBALDopK-1i1Tlfa3NsBKjI2rRqJgMbE"
+				allowfullscreen></iframe>
 		</div>
 		<!-- Contact Details Column -->
 		<div class="col-lg-4 mb-4">
 			<h3>Contact Details</h3>
 			<p>
-				3481 Melrose Place <br>Beverly Hills, CA 90210 <br>
+				Karachi <br>Pakistan <br>Burki Tower III-O, Mezzanine
+				Floor<br> Main Khalid-Bin-Waleed Rd <br>P.E.C.H.S.
+				Block-2, Karachi-75400. <br>
 			</p>
 			<p>
 				<abbr title="Phone">P</abbr>: (123) 456-7890
 			</p>
 			<p>
-				<abbr title="Email">E</abbr>: <a href="mailto:name@example.com">name@example.com
+				<abbr title="Email">E</abbr>: <a href="mailto:info@burkitech.com">info@burkitech.com
 				</a>
 			</p>
 			<p>

@@ -36,8 +36,8 @@
 					path="closeDate" />
 			</div>
 			<div class="col-md-2 mb-3">
-				<label for="date">Expiry Date</label>
-				<sf:input type="text" class="form-control" id="expiredDate"
+				<label for="expiredDate">Expiry Date</label>
+				<sf:input type="date" class="form-control" id="expiredDate"
 					path="expiredDate" />
 			</div>
 			<div class="col-md-2 mb-3">
@@ -237,6 +237,6 @@
 
 
 		<button class="btn btn-primary" id="submit" type="submit">Submit</button>
-		<sf:hidden path="id" />
+
 	</sf:form>
 </div>
