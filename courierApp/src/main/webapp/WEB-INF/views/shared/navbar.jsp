@@ -10,6 +10,63 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownPortfolio" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Setup </a>
+					<ul class="dropdown-menu multi-column columns-2">
+						<div class="row">
+							<div class="col-sm-6">
+								<ul class="multi-column-dropdown">
+									<li><a class="dropdown-item"
+										href="${contextRoot}/book-info">Book Info</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/manifest">Book Detail</a></li>
+									<li><a class="dropdown-item" href="${contextRoot}/city">City</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/creditcard">Credit Card</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/customer">Customer</a>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/customer-tarrif">Customer Tarrif</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/hand-instr">Hand Instr</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/int-sector">Int Sector</a></li>
+									<li class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="${contextRoot}/item">Item</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-6">
+								<ul class="multi-column-dropdown">
+									<li><a class="dropdown-item" href="${contextRoot}/items">Items</a>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/payment-mode">Payment Mode</a>
+									<li><a class="dropdown-item" href="${contextRoot}/product">Product</a></li>
+									<li><a class="dropdown-item" href="${contextRoot}/sector">Sector</a></li>
+									<li><a class="dropdown-item" href="${contextRoot}/service">Service</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/oms-cnsg-ref">Oms Cnsg Ref</a></li>
+									<li><a class="dropdown-item" href="${contextRoot}/route">Route</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/rate-card">Rate Card</a></li>
+									<li><a class="dropdown-item" href="${contextRoot}/track">Track</a></li>
+								</ul>
+							</div>
+						</div>
+					</ul></li>
+				<!-- Forms -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownPortfolio" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Forms </a>
+					<div class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="navbarDropdownPortfolio">
+						<a class="dropdown-item" href="${contextRoot}/employee">Employee</a>
+						<a class="dropdown-item" href="${contextRoot}/manifest">Manifest</a>
+						<a class="dropdown-item" href="${contextRoot}/delivery">Delivery</a>
+					</div></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${contextRoot}/about">About</a></li>
 				<li class="nav-item"><a class="nav-link"
@@ -31,38 +88,7 @@
 							class="dropdown-item" href="portfolio-item.html">Single
 							Portfolio Item</a>
 					</div></li>
-				<!-- Forms -->
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#"
-					id="navbarDropdownPortfolio" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false"> Forms </a>
-					<div class="dropdown-menu dropdown-menu-right"
-						aria-labelledby="navbarDropdownPortfolio">
-						<a class="dropdown-item" href="${contextRoot}/employee">Employee</a>
-						<a class="dropdown-item" href="${contextRoot}/manifest">Manifest</a>
-						<a class="dropdown-item" href="${contextRoot}/delivery">Delivery</a>
-					</div></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#"
-					id="navbarDropdownPortfolio" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false"> Setup </a>
-					<div class="dropdown-menu dropdown-menu-right"
-						aria-labelledby="navbarDropdownPortfolio">
-						<a class="dropdown-item" href="${contextRoot}/book-info">Book
-							Info</a> <a class="dropdown-item" href="${contextRoot}/manifest">Book
-							Detail</a> <a class="dropdown-item" href="${contextRoot}/city">City</a>
-						<a class="dropdown-item" href="${contextRoot}/creditcard">Credit
-							Card</a> <a class="dropdown-item" href="${contextRoot}/customer">Customer</a>
-						<a class="dropdown-item" href="${contextRoot}/customer-tarrif">Customer
-							Tarrif</a> <a class="dropdown-item" href="${contextRoot}/hand-instr">Hand
-							Instr</a> <a class="dropdown-item" href="${contextRoot}/int-sector">Int
-							Sector</a> <a class="dropdown-item" href="${contextRoot}/item">Item</a>
-						<a class="dropdown-item" href="${contextRoot}/items">Items</a> <a
-							class="dropdown-item" href="${contextRoot}/payment-mode">Payment
-							Mode</a> <a class="dropdown-item" href="${contextRoot}/product">Product</a>
-						<a class="dropdown-item" href="${contextRoot}/sector">Sector</a> <a
-							class="dropdown-item" href="${contextRoot}/service">Service</a>
-					</div></li>
+
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog"
@@ -88,6 +114,8 @@
 							class="dropdown-item" href="${contextRoot}/pricing">Pricing
 							Table</a>
 					</div></li>
+
+
 			</ul>
 		</div>
 	</div>

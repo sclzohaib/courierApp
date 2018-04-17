@@ -21,7 +21,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="${css2}/bootstrap.css" rel="stylesheet">
-
+<link href="${css2}/bootstrap2.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="${css2}/myapp.css" rel="stylesheet">
 
@@ -93,6 +93,22 @@
 
 	<c:if test="${userClickService==true}">
 		<%@include file="service.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickOmsCnsgRef==true}">
+		<%@include file="omsRef.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickRoute==true}">
+		<%@include file="route.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickRateCard==true}">
+		<%@include file="rateCard.jsp"%>
+	</c:if>
+
+	<c:if test="${userClickTrack==true}">
+		<%@include file="track.jsp"%>
 	</c:if>
 
 	<c:if test="${userClickHome==true}">

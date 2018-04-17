@@ -50,25 +50,24 @@ public class RateCard {
 	@Column(name = "START_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
-	
-	
-	private Date getStartDate() {
+
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	private void setStartDate(Date startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
 	@Column(name = "END_DATE")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
-	
-	private Date getEndDate() {
+
+	public Date getEndDate() {
 		return endDate;
 	}
 
-	private void setEndDate(Date endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
@@ -94,140 +93,139 @@ public class RateCard {
 	@Column(name = "TARRIF_YEAR")
 	private String tarrifYear;
 
-
-	private String getPayId() {
+	public String getPayId() {
 		return payId;
 	}
 
-	private void setPayId(String payId) {
+	public void setPayId(String payId) {
 		this.payId = payId;
 	}
 
-	private String getProductID() {
+	public String getProductID() {
 		return productID;
 	}
 
-	private void setProductID(String productID) {
+	public void setProductID(String productID) {
 		this.productID = productID;
 	}
 
-	private String getSECTORiD() {
+	public String getSECTORiD() {
 		return SECTORiD;
 	}
 
-	private void setSECTORiD(String sECTORiD) {
+	public void setSECTORiD(String sECTORiD) {
 		SECTORiD = sECTORiD;
 	}
 
-	private String getServiceCode() {
+	public String getServiceCode() {
 		return serviceCode;
 	}
 
-	private void setServiceCode(String serviceCode) {
+	public void setServiceCode(String serviceCode) {
 		this.serviceCode = serviceCode;
 	}
 
-	private long getWttLowerLmt() {
+	public long getWttLowerLmt() {
 		return wttLowerLmt;
 	}
 
-	private void setWttLowerLmt(long wttLowerLmt) {
+	public void setWttLowerLmt(long wttLowerLmt) {
 		this.wttLowerLmt = wttLowerLmt;
 	}
 
-	private long getWttUpperLmt() {
+	public long getWttUpperLmt() {
 		return wttUpperLmt;
 	}
 
-	private void setWttUpperLmt(long wttUpperLmt) {
+	public void setWttUpperLmt(long wttUpperLmt) {
 		this.wttUpperLmt = wttUpperLmt;
 	}
 
-	private long getDivFac() {
+	public long getDivFac() {
 		return divFac;
 	}
 
-	private void setDivFac(long divFac) {
+	public void setDivFac(long divFac) {
 		this.divFac = divFac;
 	}
 
-	private long getCharges() {
+	public long getCharges() {
 		return charges;
 	}
 
-	private void setCharges(long charges) {
+	public void setCharges(long charges) {
 		this.charges = charges;
 	}
 
-	private long getAdCharges() {
+	public long getAdCharges() {
 		return adCharges;
 	}
 
-	private void setAdCharges(long adCharges) {
+	public void setAdCharges(long adCharges) {
 		this.adCharges = adCharges;
 	}
 
-	private long getHandlingCharges() {
+	public long getHandlingCharges() {
 		return handlingCharges;
 	}
 
-	private void setHandlingCharges(long handlingCharges) {
+	public void setHandlingCharges(long handlingCharges) {
 		this.handlingCharges = handlingCharges;
 	}
 
-	private long getOtherCharges() {
+	public long getOtherCharges() {
 		return otherCharges;
 	}
 
-	private void setOtherCharges(long otherCharges) {
+	public void setOtherCharges(long otherCharges) {
 		this.otherCharges = otherCharges;
 	}
 
-	private String getRemarks() {
+	public String getRemarks() {
 		return remarks;
 	}
 
-	private void setRemarks(String remarks) {
+	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
 
-	private String getApprovalAuth() {
+	public String getApprovalAuth() {
 		return approvalAuth;
 	}
 
-	private void setApprovalAuth(String approvalAuth) {
+	public void setApprovalAuth(String approvalAuth) {
 		this.approvalAuth = approvalAuth;
 	}
 
-	private String getUpdatedBy() {
+	public String getUpdatedBy() {
 		return updatedBy;
 	}
 
-	private void setUpdatedBy(String updatedBy) {
+	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
 
-	private String getEmpId() {
+	public String getEmpId() {
 		return empId;
 	}
 
-	private void setEmpId(String empId) {
+	public void setEmpId(String empId) {
 		this.empId = empId;
 	}
 
-	private String getStat() {
+	public String getStat() {
 		return stat;
 	}
 
-	private void setStat(String stat) {
+	public void setStat(String stat) {
 		this.stat = stat;
 	}
 
-	private String getTarrifYear() {
+	public String getTarrifYear() {
 		return tarrifYear;
 	}
 
-	private void setTarrifYear(String tarrifYear) {
+	public void setTarrifYear(String tarrifYear) {
 		this.tarrifYear = tarrifYear;
 	}
 

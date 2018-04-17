@@ -2,6 +2,7 @@ package org.burkitech.courierApp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import org.burkitech.courierApp.dao.BookInfoDAO;
 import org.burkitech.courierApp.dao.CityDAO;
 import org.burkitech.courierApp.dao.CreditCardDAO;
@@ -13,10 +14,14 @@ import org.burkitech.courierApp.dao.HandInstrDAO;
 import org.burkitech.courierApp.dao.IntSectorDAO;
 import org.burkitech.courierApp.dao.ItemDAO;
 import org.burkitech.courierApp.dao.ManifestDAO;
+import org.burkitech.courierApp.dao.OmsCnsgRefDAO;
 import org.burkitech.courierApp.dao.PaymentModeDAO;
 import org.burkitech.courierApp.dao.ProductDAO;
+import org.burkitech.courierApp.dao.RateCardDAO;
+import org.burkitech.courierApp.dao.RouteDAO;
 import org.burkitech.courierApp.dao.SectorDAO;
 import org.burkitech.courierApp.dao.ServiceDAO;
+import org.burkitech.courierApp.dao.TrackDAO;
 import org.burkitech.courierApp.dto.BookInfo;
 import org.burkitech.courierApp.dto.City;
 import org.burkitech.courierApp.dto.CreditCard;
@@ -31,10 +36,14 @@ import org.burkitech.courierApp.dto.Item;
 import org.burkitech.courierApp.dto.Items;
 import org.burkitech.courierApp.dto.Manifest;
 import org.burkitech.courierApp.dto.ManifestDetail;
+import org.burkitech.courierApp.dto.OmsCnsgRef;
 import org.burkitech.courierApp.dto.PaymentMode;
 import org.burkitech.courierApp.dto.Product;
+import org.burkitech.courierApp.dto.RateCard;
+import org.burkitech.courierApp.dto.Route;
 import org.burkitech.courierApp.dto.Sector;
 import org.burkitech.courierApp.dto.Service;
+import org.burkitech.courierApp.dto.Track;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -91,6 +100,18 @@ public class PageController {
 
 	@Autowired
 	private ServiceDAO serviceDAO;
+
+	@Autowired
+	private OmsCnsgRefDAO omsCnsgRefDAO;
+
+	@Autowired
+	private RouteDAO routeDAO;
+
+	@Autowired
+	private RateCardDAO rateCardDAO;
+
+	@Autowired
+	private TrackDAO trackDAO;
 
 	// ------------------------------------------------------------
 	// Pages
@@ -712,6 +733,110 @@ public class PageController {
 
 		serviceDAO.add(mService);
 		return "redirect:/service";
+	}
+
+	// ------------------------------------------------------------
+	// oms-cnsg-ref form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/oms-cnsg-ref", method = RequestMethod.GET)
+	public ModelAndView omsCnsgRef() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Oms Cnsg Ref");
+		mv.addObject("userClickOmsCnsgRef", true);
+		OmsCnsgRef nOmsCnsgRef = new OmsCnsgRef();
+		mv.addObject("omsCnsgRef", nOmsCnsgRef);
+		return mv;
+	}
+
+	@RequestMapping(value = "/oms-cnsg-ref", method = RequestMethod.POST)
+	public String addomsCnsgRef(@Valid @ModelAttribute("omsCnsgRef") OmsCnsgRef nOmsCnsgRef, BindingResult results,
+			Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickOmsCnsgRef", true);
+			model.addAttribute("title", "Oms Cnsg Ref");
+			return "page";
+		}
+
+		omsCnsgRefDAO.add(nOmsCnsgRef);
+		return "redirect:/oms-cnsg-ref";
+	}
+
+	// ------------------------------------------------------------
+	// Route form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/route", method = RequestMethod.GET)
+	public ModelAndView route() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Route");
+		mv.addObject("userClickRoute", true);
+		Route nRoute = new Route();
+		mv.addObject("route", nRoute);
+		return mv;
+	}
+
+	@RequestMapping(value = "/route", method = RequestMethod.POST)
+	public String addroute(@Valid @ModelAttribute("route") Route nRoute, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickRoute", true);
+			model.addAttribute("title", "Route");
+			return "page";
+		}
+
+		routeDAO.add(nRoute);
+		return "redirect:/route";
+	}
+
+	// ------------------------------------------------------------
+	// Rate Card form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/rate-card", method = RequestMethod.GET)
+	public ModelAndView rateCard() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Rate Card");
+		mv.addObject("userClickRateCard", true);
+		RateCard nRateCard = new RateCard();
+		mv.addObject("rateCard", nRateCard);
+		return mv;
+	}
+
+	@RequestMapping(value = "/rate-card", method = RequestMethod.POST)
+	public String addrateCard(@Valid @ModelAttribute("rateCard") RateCard nRateCard, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickRateCard", true);
+			model.addAttribute("title", "Rate Card");
+			return "page";
+		}
+
+		rateCardDAO.add(nRateCard);
+		return "redirect:/rate-card";
+	}
+
+	// ------------------------------------------------------------
+	// Track form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/track", method = RequestMethod.GET)
+	public ModelAndView track() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Track");
+		mv.addObject("userClickTrack", true);
+		Track nTrack = new Track();
+		mv.addObject("track", nTrack);
+		return mv;
+	}
+
+	@RequestMapping(value = "/track", method = RequestMethod.POST)
+	public String addTrack(@Valid @ModelAttribute("track") Track nTrack, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			model.addAttribute("userClickTrack", true);
+			model.addAttribute("title", "Track");
+			return "page";
+		}
+
+		trackDAO.add(nTrack);
+		return "redirect:/track";
 	}
 
 }

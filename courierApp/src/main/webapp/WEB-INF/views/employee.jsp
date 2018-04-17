@@ -48,6 +48,5 @@
 			</div>
 		</div>
 		<button class="btn btn-primary" id="submit" type="submit">Submit</button>
-		<sf:hidden path="id" />
 	</sf:form>
 </div>

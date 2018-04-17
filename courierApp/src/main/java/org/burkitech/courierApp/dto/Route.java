@@ -7,127 +7,127 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CS_ROUTE")
-public class Route {	
+public class Route {
 
 	@Id
 	@Column(name = "RUT_NO")
 	private String rutNo;
-	
+
 	@Column(name = "DSCRP")
 	private String dscrp;
 
 	@Column(name = "RUT_TYP_NO")
 	private String rutTypNo;
-	
+
 	@Column(name = "PIK_TIM_NO")
 	private String pikTimNo;
 
 	@Column(name = "DEL_TIM_NO")
 	private String delTimNo;
-	
+
 	@Column(name = "CITY_NO")
 	private String cityNo;
 
 	@Column(name = "PIK_RATE")
 	private long pikRate;
-	
+
 	@Column(name = "DEL_RATE")
 	private long delRate;
 
 	@Column(name = "REMARKS")
 	private String remarks;
-	
+
 	@Column(name = "STAT")
 	private String stat;
 
 	@Column(name = "SALE_TRTY")
 	private String saleTrty;
 
-	private String getRutNo() {
+	public String getRutNo() {
 		return rutNo;
 	}
 
-	private void setRutNo(String rutNo) {
+	public void setRutNo(String rutNo) {
 		this.rutNo = rutNo;
 	}
 
-	private String getDscrp() {
+	public String getDscrp() {
 		return dscrp;
 	}
 
-	private void setDscrp(String dscrp) {
+	public void setDscrp(String dscrp) {
 		this.dscrp = dscrp;
 	}
 
-	private String getRutTypNo() {
+	public String getRutTypNo() {
 		return rutTypNo;
 	}
 
-	private void setRutTypNo(String rutTypNo) {
+	public void setRutTypNo(String rutTypNo) {
 		this.rutTypNo = rutTypNo;
 	}
 
-	private String getPikTimNo() {
+	public String getPikTimNo() {
 		return pikTimNo;
 	}
 
-	private void setPikTimNo(String pikTimNo) {
+	public void setPikTimNo(String pikTimNo) {
 		this.pikTimNo = pikTimNo;
 	}
 
-	private String getDelTimNo() {
+	public String getDelTimNo() {
 		return delTimNo;
 	}
 
-	private void setDelTimNo(String delTimNo) {
+	public void setDelTimNo(String delTimNo) {
 		this.delTimNo = delTimNo;
 	}
 
-	private String getCityNo() {
+	public String getCityNo() {
 		return cityNo;
 	}
 
-	private void setCityNo(String cityNo) {
+	public void setCityNo(String cityNo) {
 		this.cityNo = cityNo;
 	}
 
-	private long getPikRate() {
+	public long getPikRate() {
 		return pikRate;
 	}
 
-	private void setPikRate(long pikRate) {
+	public void setPikRate(long pikRate) {
 		this.pikRate = pikRate;
 	}
 
-	private long getDelRate() {
+	public long getDelRate() {
 		return delRate;
 	}
 
-	private void setDelRate(long delRate) {
+	public void setDelRate(long delRate) {
 		this.delRate = delRate;
 	}
 
-	private String getRemarks() {
+	public String getRemarks() {
 		return remarks;
 	}
 
-	private void setRemarks(String remarks) {
+	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
 
-	private String getStat() {
+	public String getStat() {
 		return stat;
 	}
 
-	private void setStat(String stat) {
+	public void setStat(String stat) {
 		this.stat = stat;
 	}
 
-	private String getSaleTrty() {
+	public String getSaleTrty() {
 		return saleTrty;
 	}
 
-	private void setSaleTrty(String saleTrty) {
+	public void setSaleTrty(String saleTrty) {
 		this.saleTrty = saleTrty;
 	}
 
@@ -136,8 +136,5 @@ public class Route {
 		return "Route [rutNo=" + rutNo + ", dscrp=" + dscrp + ", rutTypNo=" + rutTypNo + ", pikTimNo=" + pikTimNo
 				+ ", delTimNo=" + delTimNo + ", cityNo=" + cityNo + ", pikRate=" + pikRate + ", delRate=" + delRate
 				+ ", remarks=" + remarks + ", stat=" + stat + ", saleTrty=" + saleTrty + "]";
-	}	
-	
-	
-
+	}
 }
