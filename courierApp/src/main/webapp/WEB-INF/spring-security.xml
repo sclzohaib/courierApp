@@ -21,7 +21,7 @@
 		<access-denied-handler error-page="/access-denied"/>
 	</http>
 
-	<context:component-scan base-package="org.burkitech.courierApp" />
+	<context:component-scan base-package="org.burkitech.courierApp"  />
 	<authentication-manager>
 		<authentication-provider>
 		<!--  <password-encoder ref="passwordEncoder"/>-->
