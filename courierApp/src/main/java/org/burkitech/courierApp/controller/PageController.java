@@ -113,15 +113,6 @@ public class PageController {
 
 	}
 
-	@RequestMapping(value = "/contact")
-	public ModelAndView contact() {
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Contact Us");
-		mv.addObject("userClickContact", true);
-		return mv;
-
-	}
-
 	@RequestMapping(value = "/services")
 	public ModelAndView services() {
 		ModelAndView mv = new ModelAndView("page");

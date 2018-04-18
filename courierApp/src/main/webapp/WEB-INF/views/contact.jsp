@@ -36,7 +36,7 @@
 				<abbr title="Phone">P</abbr>: (123) 456-7890
 			</p>
 			<p>
-				<abbr title="Email">E</abbr>: <a href="mailto:info@burkitech.com">info@burkitech.com
+				<abbr title="Email">E</abbr>: <a href="${contextRoot}/mailform">info@burkitech.com
 				</a>
 			</p>
 			<p>
@@ -51,11 +51,11 @@
 	<div class="row">
 		<div class="col-lg-8 mb-4">
 			<h3>Send us a Message</h3>
-			<form name="sentMessage" id="contactForm" novalidate>
+			<form name="sentMessage" action="${contextRoot}/contact" id="contactForm" novalidate method="post">
 				<div class="control-group form-group">
 					<div class="controls">
-						<label>Full Name:</label> <input type="text" class="form-control"
-							id="name" required
+						<label>Full Name:</label> 
+						<input type="text" class="form-control" id="name" name="name" required 
 							data-validation-required-message="Please enter your name.">
 						<p class="help-block"></p>
 					</div>
@@ -63,21 +63,21 @@
 				<div class="control-group form-group">
 					<div class="controls">
 						<label>Phone Number:</label> <input type="tel"
-							class="form-control" id="phone" required
+							class="form-control" id="phone" name="phone" required
 							data-validation-required-message="Please enter your phone number.">
 					</div>
 				</div>
 				<div class="control-group form-group">
 					<div class="controls">
 						<label>Email Address:</label> <input type="email"
-							class="form-control" id="email" required
+							class="form-control" id="email" name="email" required
 							data-validation-required-message="Please enter your email address.">
 					</div>
 				</div>
 				<div class="control-group form-group">
 					<div class="controls">
 						<label>Message:</label>
-						<textarea rows="10" cols="100" class="form-control" id="message"
+						<textarea rows="10" cols="100" class="form-control" id="message" name="message"
 							required
 							data-validation-required-message="Please enter your message"
 							maxlength="999" style="resize: none"></textarea>

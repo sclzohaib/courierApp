@@ -18,11 +18,10 @@ public class MailConfig {
         javaMailSender.setUsername("burkitechno@gmail.com");
         javaMailSender.setPassword("burki_123");
         Properties mailProperties = new Properties();
+        mailProperties.put("mail.smtp.starttls.enable", "true");
         mailProperties.put("mail.smtp.auth", "true");
-        mailProperties.put("mail.smtp.starttls.enable", "starttls");
         mailProperties.put("mail.smtp.debug", "true");
         javaMailSender.setJavaMailProperties(mailProperties);
         return javaMailSender;
     }
-
 }
