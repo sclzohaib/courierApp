@@ -23,18 +23,21 @@
 										href="${contextRoot}/book-info">Book Info</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/manifest">Book Detail</a></li>
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="${contextRoot}/city">City</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/creditcard">Credit Card</a></li>
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/customer">Customer</a>
 									<li><a class="dropdown-item"
-										href="${contextRoot}/customer-tarrif">Customer Tarrif</a></li>
+										href="${contextRoot}/customer-tarrif">Customer Tarrif</a></li>									
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/hand-instr">Hand Instr</a></li>
 									<li><a class="dropdown-item"
-										href="${contextRoot}/int-sector">Int Sector</a></li>
-									<li class="dropdown-divider"></li>
+										href="${contextRoot}/int-sector">Int Sector</a></li>									
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="${contextRoot}/item">Item</a></li>
 								</ul>
 							</div>
@@ -43,14 +46,19 @@
 									<li><a class="dropdown-item" href="${contextRoot}/items">Items</a>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/payment-mode">Payment Mode</a>
+										
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="${contextRoot}/product">Product</a></li>
 									<li><a class="dropdown-item" href="${contextRoot}/sector">Sector</a></li>
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="${contextRoot}/service">Service</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/oms-cnsg-ref">Oms Cnsg Ref</a></li>
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="${contextRoot}/route">Route</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/rate-card">Rate Card</a></li>
+										<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="${contextRoot}/track">Track</a></li>
 								</ul>
 							</div>
