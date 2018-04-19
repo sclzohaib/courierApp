@@ -26,3 +26,8 @@ body {
 .portfolio-item {
 	margin-bottom: 30px;
 }
+
+label {
+	display: inline-block;
+	margin-bottom: .0rem !important;
+}
