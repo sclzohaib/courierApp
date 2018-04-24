@@ -134,6 +134,37 @@ public class PageController {
 
 	}
 
+	@RequestMapping(value = "/autofill")
+	public ModelAndView autofill() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Autofill");
+		mv.addObject("userClickAutofill", true);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/table1")
+	public ModelAndView table1() {
+		ModelAndView mv = new ModelAndView("table1");
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/table2")
+	public ModelAndView table2() {
+		ModelAndView mv = new ModelAndView("table2");
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/search")
+	public ModelAndView search() {
+		ModelAndView mv = new ModelAndView("search");
+
+		return mv;
+
+	}
+
 	@RequestMapping(value = "/services")
 	public ModelAndView services() {
 		ModelAndView mv = new ModelAndView("page");
@@ -388,31 +419,31 @@ public class PageController {
 		return "redirect:/delivery-detail";
 	}
 
-	// ------------------------------------------------------------
-	// book info form
-	// ------------------------------------------------------------
-	@RequestMapping(value = "/book-info", method = RequestMethod.GET)
-	public ModelAndView bookInfo() {
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Book Info");
-		mv.addObject("userClickBookInfo", true);
-		BookInfo nBookInfo = new BookInfo();
-		mv.addObject("bookInfo", nBookInfo);
-		return mv;
-
-	}
-
-	@RequestMapping(value = "/book-info", method = RequestMethod.POST)
-	public String addBookInfo(@Valid @ModelAttribute("bookInfo") BookInfo mBookInfo, BindingResult results, Model model,
-			HttpServletRequest request) {
-		if (results.hasErrors()) {
-			model.addAttribute("userClickBookInfo", true);
-			model.addAttribute("title", "Book Info");
-			return "page";
-		}
-		bookInfoDAO.add(mBookInfo);
-		return "redirect:/book-info";
-	}
+//	// ------------------------------------------------------------
+//	// book info form
+//	// ------------------------------------------------------------
+//	@RequestMapping(value = "/book-info", method = RequestMethod.GET)
+//	public ModelAndView bookInfo() {
+//		ModelAndView mv = new ModelAndView("page");
+//		mv.addObject("title", "Book Info");
+//		mv.addObject("userClickBookInfo", true);
+//		BookInfo nBookInfo = new BookInfo();
+//		mv.addObject("bookInfo", nBookInfo);
+//		return mv;
+//
+//	}
+//
+//	@RequestMapping(value = "/book-info", method = RequestMethod.POST)
+//	public String addBookInfo(@Valid @ModelAttribute("bookInfo") BookInfo mBookInfo, BindingResult results, Model model,
+//			HttpServletRequest request) {
+//		if (results.hasErrors()) {
+//			model.addAttribute("userClickBookInfo", true);
+//			model.addAttribute("title", "Book Info");
+//			return "page";
+//		}
+//		bookInfoDAO.add(mBookInfo);
+//		return "redirect:/book-info";
+//	}
 
 	// ------------------------------------------------------------
 	// City from
