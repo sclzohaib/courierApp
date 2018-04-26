@@ -3,7 +3,10 @@ package org.burkitech.courierApp.dto;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -13,6 +16,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "NEW_BOOK_INFO")
 public class NewBookInfo {
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="my_entity_seq_gen")
+	@SequenceGenerator(name="my_entity_seq_gen", sequenceName="new_info")
 	private int id;
 	private String custKey;// master
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -55,6 +60,15 @@ public class NewBookInfo {
 	private String insDeclareValue;// master
 	private Long discShipment;// master
 	private Long total;// master
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getCustKey() {
 		return custKey;

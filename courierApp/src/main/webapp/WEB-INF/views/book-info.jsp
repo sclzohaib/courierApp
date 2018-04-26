@@ -1,4 +1,5 @@
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+
 <div class="container">
 	<c:if test="${not empty message}">
 		<div class=col-xs-12>
@@ -34,9 +35,10 @@
 		<div class="form-row">
 			<div class="col-md-2 mb-3">
 				<label>Product</label>
-				<sf:select class="form-control" path="productId"> 
-				<option value="">--Select Product--</option>
-					<sf:options items="${products}" itemLabel="description" itemValue="id"/>
+				<sf:select class="form-control" path="productId">
+					<option value=0>--Select Product--</option>
+					<sf:options items="${products}" itemLabel="description"
+						itemValue="id" />
 				</sf:select>
 			</div>
 			<div class="col-md-3 mb-3">
@@ -46,15 +48,22 @@
 			</div>
 			<div class="col-md-1 mb-3">
 				<label>Origin</label>
-				<sf:input type="text" class="form-control" id="origin" path="origin" />
+				<sf:input type="text" class="form-control" id="origin" path="origin" onkeydown="upperCaseF(this)"/>
 			</div>
+			<script>
+			function upperCaseF(a){
+			    setTimeout(function(){
+			        a.value = a.value.toUpperCase();
+			    }, 1);
+			}
+			</script>
 			<div class="col-md-2 mb-3">
 				<label>Destination</label>
 				<sf:select class="form-control" id="dest" path="dest"></sf:select>
 			</div>
 			<div class="col-md-2 mb-3">
 				<label> </label>
-				<sf:input type="text" class="form-control" id="cityName"
+				<sf:input type="text" class="form-control" id="cityName" 
 					path="cityName" />
 			</div>
 			<div class="col-md-2 mb-3">
@@ -67,9 +76,9 @@
 			<div class="col-md-5 mb-3">
 				<b><label>Shipper Information</label></b>
 				<div class="input-group">
-					<sf:select class="form-control" id="shipperInfo" path="shipperInfo">
-						<option selected="selected">Search By Phone</option>
-					</sf:select>
+
+					<sf:input class="form-control" type="text" path="shipperInfo" id="shipperInfo" name="shipperInfo"/>
+
 					<div class="input-group-btn">
 						<button type="button" class="iconbtn btn-success"
 							data-toggle="modal" data-target="#myInfoModal">
@@ -77,14 +86,13 @@
 						</button>
 					</div>
 				</div>
+				<div id="hint"></div>
 			</div>
 			<div class="col-md-2 mb-3"></div>
 			<div class="col-md-5 mb-3">
 				<b><label for="empId">Consignee Information</label></b>
 				<div class="input-group">
-					<sf:select class="form-control" id="cnsgInfo" path="cnsgInfo">
-						<option selected="selected">Search By Phone</option>
-					</sf:select>
+					<sf:input type="text" class="form-control" id="cnsgInfo" path="cnsgInfo" name="cnsgInfo"/>
 					<div class="input-group-btn">
 						<button type="button" class="iconbtn btn-success"
 							data-toggle="modal" data-target="#myInfoModal">
@@ -100,7 +108,7 @@
 			</div>
 			<div class="col-md-3 mb-3">
 				<sf:input type="text" class="form-control" id="shipperName"
-					path="shipperName" />
+					name="shipperName" path="shipperName" />
 			</div>
 			<div class="col-md-2 mb-3"></div>
 			<div class="col-md-2 mb-3">
@@ -210,12 +218,12 @@
 
 		<div class="form-row">
 			<div class="col-md-2 mb-3">
-				<label>Dimensions</label>
+				<label>Dimensions (kg)</label>
 			</div>
 			<div class="col-md-3 mb-3">
 				<div class="input-group">
-					<sf:input type="number" class="form-control" id="dimensions"
-						path="dimensions" />
+					<sf:input type="number" class="form-control" id="dimensions" name="dimensions"
+						path="dimensions"/>
 					<div class="input-group-btn">
 						<button type="button" class="iconbtn btn-success"
 							data-toggle="modal" data-target="#myDimensionModal">
@@ -364,40 +372,38 @@
 				</div>
 				<div class="modal-body">
 					<div class="container">
-						<form method="POST" id="dimensionsForm" class="form-horizontal"
-							action="${contextRoot}/dimensions">
 							<!--Category Form -->
 							<div class="form-row text-center">
 								<div class="col-md-3 mb-3">
-									<label>Weight</label>
+									<label>Length (cm)</label>
 								</div>
 								<div class="col-md-6 mb-3">
-									<input type="number" class="form-control" />
+									<input type="number" class="form-control" id="length" name="length"/>
 								</div>
 							</div>
 							<div class="form-row text-center">
 								<div class="col-md-3 mb-3">
-									<label>Height</label>
+									<label>Width (cm)</label>
 								</div>
+								<!-- (Length x Width x Height) / 5000 -->
 								<div class="col-md-6 mb-3">
-									<input type="number" class="form-control" />
+									<input type="number" class="form-control" id="width" name="width"/>
 								</div>
 							</div>
 							<div class="form-row text-center">
 								<div class="col-md-3 mb-3">
-									<label>Width</label>
+									<label>Height (cm)</label>
 								</div>
 								<div class="col-md-6 mb-3">
-									<input type="number" class="form-control" />
+									<input type="number" class="form-control" id="height" name="height"/>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="col-md-3 mb-3"></div>
 								<div class="col-md-6 mb-3">
-									<input type="submit" class="form-control btn-success" />
+								<button type="button" id="btnSave" class="form-control btn-success">Save</button>
 								</div>
 							</div>
-						</form>
 					</div>
 				</div>
 			</div>

@@ -198,8 +198,11 @@
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 
+
+		
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js2}/jquery.min.js"></script>
+		<script src="${js2}/myapp.js"></script>
 		<script src="${js2}/bootstrap.bundle.min.js"></script>
 	
 </body>
