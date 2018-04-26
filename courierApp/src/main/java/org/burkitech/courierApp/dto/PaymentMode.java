@@ -10,9 +10,9 @@ import javax.persistence.Table;
 public class PaymentMode {
 
 	@Id
-	@Column(name = "PAY_CODE")
+	@Column(name = "PAYMENT_CODE")
 	private String payCode;
-	
+
 	@Column(name = "DESCRIPTION")
 	private String description;
 
@@ -36,6 +36,5 @@ public class PaymentMode {
 	public String toString() {
 		return "PaymentMode [payCode=" + payCode + ", description=" + description + "]";
 	}
-	
-	
+
 }

@@ -6,10 +6,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.burkitech.courierApp.dao.BookInfoDAO;
+import org.burkitech.courierApp.dao.CityDAO;
+import org.burkitech.courierApp.dao.PaymentModeDAO;
 import org.burkitech.courierApp.dao.ProductDAO;
-import org.burkitech.courierApp.dto.BookInfo;
+import org.burkitech.courierApp.dao.ServiceDAO;
+import org.burkitech.courierApp.dto.City;
 import org.burkitech.courierApp.dto.NewBookInfo;
+import org.burkitech.courierApp.dto.PaymentMode;
 import org.burkitech.courierApp.dto.Product;
+import org.burkitech.courierApp.dto.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,51 +31,87 @@ public class NewPageController {
 	private BookInfoDAO bookInfoDAO;
 	@Autowired
 	private ProductDAO productDAO;
-		// ------------------------------------------------------------
-		// book info form
-		// ------------------------------------------------------------
-		@RequestMapping(value = "/book-info", method = RequestMethod.GET)
-		public ModelAndView bookInfo(@RequestParam(name = "dim", required = false) String dim) {
-			ModelAndView mv = new ModelAndView("page");
-			mv.addObject("title", "Book Info");
-			mv.addObject("userClickBookInfo", true);
-			NewBookInfo nBookInfo = new NewBookInfo();
-			mv.addObject("bookInfo", nBookInfo);
-			mv.addObject("dim", dim);
-			return mv;
 
-		}
+	@Autowired
+	private CityDAO cityDAO;
+	@Autowired
+	private ServiceDAO serviceDAO;
+	@Autowired
+	private PaymentModeDAO paymentModeDAO;
 
-		@RequestMapping(value = "/book-info", method = RequestMethod.POST)
-		public String addBookInfo(@Valid @ModelAttribute("bookInfo") NewBookInfo mBookInfo, BindingResult results, Model model,
-				HttpServletRequest request) {
-			if (results.hasErrors()) {
-				System.out.println(results.toString());
-				model.addAttribute("userClickBookInfo", true);
-				model.addAttribute("title", "Book Info");
-				return "page";
-			}
-			bookInfoDAO.add(mBookInfo);
-			return "redirect:/book-info";
+	// ------------------------------------------------------------
+	// book info form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/book-info", method = RequestMethod.GET)
+	public ModelAndView bookInfo(@RequestParam(name = "dim", required = false) String dim) {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Book Info");
+		mv.addObject("userClickBookInfo", true);
+		NewBookInfo nBookInfo = new NewBookInfo();
+		mv.addObject("bookInfo", nBookInfo);
+		mv.addObject("dim", dim);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/book-info", method = RequestMethod.POST)
+	public String addBookInfo(@Valid @ModelAttribute("bookInfo") NewBookInfo mBookInfo, BindingResult results,
+			Model model, HttpServletRequest request) {
+		if (results.hasErrors()) {
+			System.out.println(results.toString());
+			model.addAttribute("userClickBookInfo", true);
+			model.addAttribute("title", "Book Info");
+			return "page";
 		}
-		//---------------------------------------------------------------------------------
-		// returning categories for all request mapping
-		@ModelAttribute("products")
-		public List<Product> getProducts() {
-			return productDAO.productList();
-		}
-		@ModelAttribute("product")
-		public Product getProduct() {
-			return new Product();
-		}
-		
-		//---------------------------------------------------------------------------------
-		//handling dimensions
-		@RequestMapping(value= "/dimensions" ,method=RequestMethod.POST)
-		public String HandleDimensions(@RequestParam("length") long length,@RequestParam("width") long width,@RequestParam("height") long height) {
-			long dim=(length * width * height) / 5000;
-			System.out.println(length+" "+width+" "+height+" "+dim);
-			return "redirect:/book-info?dim="+dim;
-		}
+		bookInfoDAO.add(mBookInfo);
+		return "redirect:/book-info";
+	}
+
+	// ---------------------------------------------------------------------------------
+	// returning categories for all request mapping
+	@ModelAttribute("products")
+	public List<Product> getProducts() {
+		return productDAO.productList();
+	}
+
+	@ModelAttribute("product")
+	public Product getProduct() {
+		return new Product();
+	}
+
+	// ---------------------------------------------------------------------------------
+	// returning cities for all request mapping
+	@ModelAttribute("cities")
+	public List<City> getCity() {
+		return cityDAO.cityList();
+	}
+
+	// @ModelAttribute("product")
+	// public Product getProduct() {
+	// return new Product();
+	// }
+	// ---------------------------------------------------------------------------------
+	// returning cities for all request mapping
+	@ModelAttribute("services")
+	public List<Service> getService() {
+		return serviceDAO.serviceList();
+	}
+
+	// ---------------------------------------------------------------------------------
+	// returning cities for all request mapping
+	@ModelAttribute("paymentModes")
+	public List<PaymentMode> getPaymentMode() {
+		return paymentModeDAO.paymentModeList();
+	}
+
+	// ---------------------------------------------------------------------------------
+	// handling dimensions
+	@RequestMapping(value = "/dimensions", method = RequestMethod.POST)
+	public String HandleDimensions(@RequestParam("length") long length, @RequestParam("width") long width,
+			@RequestParam("height") long height) {
+		long dim = (length * width * height) / 5000;
+		System.out.println(length + " " + width + " " + height + " " + dim);
+		return "redirect:/book-info?dim=" + dim;
+	}
 
 }
