@@ -1,7 +1,7 @@
 <%@page import="java.sql.*"%>
 	<%	
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "COURIER",
+	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.100.13:1521:xe", "COURIER",
 			"oracle");
 	Statement stmt = conn.createStatement();
 	

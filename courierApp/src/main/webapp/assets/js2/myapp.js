@@ -14,7 +14,7 @@ function onShipperChange() {
             $('#shipperName').val(array_data[2]);
             $('#shipperCompany').val(array_data[3]);
             $('#shipperAddress').val(array_data[4]);
-            $('#shipperPhone').val(array_data[5]);  
+            $('#shipperPhone').val(array_data[6]);  
         },
         error: function (data) {
         }
@@ -34,7 +34,7 @@ function onCnsgChange() {
             $('#cnsgName').val(array_data[2]);
             $('#cnsgCompany').val(array_data[3]);
             $('#cnsgAddress').val(array_data[4]);
-            $('#cnsgPhone').val(array_data[5]);  
+            $('#cnsgPhone').val(array_data[6]);
         },
         error: function (data) {
         }
