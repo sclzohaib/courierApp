@@ -1,13 +1,5 @@
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-
 <div class="container">
-	<c:if test="${not empty message}">
-		<div class=col-xs-12>
-			<div class="alert alert-success alert-dismissible">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				${message}
-			</div>
-	</c:if>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
 		<li class="breadcrumb-item active">Forms</li>
@@ -60,7 +52,12 @@
 			</script>
 			<div class="col-md-2 mb-3">
 				<label>Destination</label>
-				<sf:select class="form-control" id="dest" path="dest"></sf:select>
+				<sf:select class="form-control" id="dest" path="dest">
+					<option value=0>--Select City--</option>
+					<sf:options items="${cities}" itemLabel="description"
+						itemValue="cityNo" />
+				</sf:select>
+
 			</div>
 			<div class="col-md-2 mb-3">
 				<label> </label>
@@ -69,7 +66,13 @@
 			</div>
 			<div class="col-md-2 mb-3">
 				<label>Service Type</label>
-				<sf:select class="form-control" id="serviceType" path="serviceType"></sf:select>
+				<sf:select class="form-control" id="serviceType" path="serviceType">
+
+					<option value=0>--Select Service Type--</option>
+					<sf:options items="${services}" itemLabel="description"
+						itemValue="serviceCode" />
+
+				</sf:select>
 			</div>
 		</div>
 		<hr>
@@ -179,7 +182,13 @@
 				<label>Payment Mode</label>
 			</div>
 			<div class="col-md-3 mb-3">
-				<sf:select class="form-control" id="paymentMode" path="paymentMode"></sf:select>
+				<sf:select class="form-control" id="paymentMode" path="paymentMode">
+
+					<option value=0>--Select Payment Mode--</option>
+					<sf:options items="${paymentModes}" itemLabel="description"
+						itemValue="payCode" />
+
+				</sf:select>
 			</div>
 			<div class="col-md-2 mb-3">
 				<label>Service Amount</label>
@@ -407,8 +416,7 @@
 						<div class="form-row">
 							<div class="col-md-3 mb-3"></div>
 							<div class="col-md-6 mb-3">
-								<button type="button" id="btnSave"
-									class="form-control btn-success">Save</button>
+								<button type="button" id="btnSave" class="form-control btn-success">Calculate</button>
 							</div>
 						</div>
 					</div>
