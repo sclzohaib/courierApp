@@ -70,6 +70,7 @@ $('#btnSave').click(function() {
 $('#productId').change(serviceAmount);
 $('#serviceType').change(serviceAmount);
 $('#paymentMode').change(serviceAmount);
+
 function serviceAmount() {	
     $.ajax({  	 
         url: "search",
