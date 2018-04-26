@@ -35,27 +35,28 @@
 		<div class="form-row">
 			<div class="col-md-2 mb-3">
 				<label>Product</label>
-				<sf:select class="form-control" path="productId">
+				<sf:select class="form-control" path="productId" id="productId">
 					<option value=0>--Select Product--</option>
 					<sf:options items="${products}" itemLabel="description"
 						itemValue="id" />
 				</sf:select>
 			</div>
 			<div class="col-md-3 mb-3">
-				<label>Consignment No</label>
-				<sf:input type="number" class="form-control" id="cnsgNo"
+				<label>Consignment/AWB No</label>
+				<sf:input type="text" min="0" class="form-control" id="cnsgNo"
 					path="cnsgNo" />
 			</div>
 			<div class="col-md-1 mb-3">
 				<label>Origin</label>
-				<sf:input type="text" class="form-control" id="origin" path="origin" onkeydown="upperCaseF(this)"/>
+				<sf:input type="text" class="form-control" id="origin" path="origin"
+					onkeydown="upperCaseF(this)" />
 			</div>
 			<script>
-			function upperCaseF(a){
-			    setTimeout(function(){
-			        a.value = a.value.toUpperCase();
-			    }, 1);
-			}
+				function upperCaseF(a) {
+					setTimeout(function() {
+						a.value = a.value.toUpperCase();
+					}, 1);
+				}
 			</script>
 			<div class="col-md-2 mb-3">
 				<label>Destination</label>
@@ -63,7 +64,7 @@
 			</div>
 			<div class="col-md-2 mb-3">
 				<label> </label>
-				<sf:input type="text" class="form-control" id="cityName" 
+				<sf:input type="text" class="form-control" id="cityName"
 					path="cityName" />
 			</div>
 			<div class="col-md-2 mb-3">
@@ -77,7 +78,8 @@
 				<b><label>Shipper Information</label></b>
 				<div class="input-group">
 
-					<sf:input class="form-control" type="text" path="shipperInfo" id="shipperInfo" name="shipperInfo"/>
+					<sf:input class="form-control" type="text" path="shipperInfo"
+						id="shipperInfo" name="shipperInfo" />
 
 					<div class="input-group-btn">
 						<button type="button" class="iconbtn btn-success"
@@ -92,7 +94,8 @@
 			<div class="col-md-5 mb-3">
 				<b><label for="empId">Consignee Information</label></b>
 				<div class="input-group">
-					<sf:input type="text" class="form-control" id="cnsgInfo" path="cnsgInfo" name="cnsgInfo"/>
+					<sf:input type="text" class="form-control" id="cnsgInfo"
+						path="cnsgInfo" name="cnsgInfo" />
 					<div class="input-group-btn">
 						<button type="button" class="iconbtn btn-success"
 							data-toggle="modal" data-target="#myInfoModal">
@@ -222,8 +225,8 @@
 			</div>
 			<div class="col-md-3 mb-3">
 				<div class="input-group">
-					<sf:input type="number" class="form-control" id="dimensions" name="dimensions"
-						path="dimensions"/>
+					<sf:input type="number" class="form-control" id="dimensions"
+						name="dimensions" path="dimensions" min="0" step="any" />
 					<div class="input-group-btn">
 						<button type="button" class="iconbtn btn-success"
 							data-toggle="modal" data-target="#myDimensionModal">
@@ -372,38 +375,42 @@
 				</div>
 				<div class="modal-body">
 					<div class="container">
-							<!--Category Form -->
-							<div class="form-row text-center">
-								<div class="col-md-3 mb-3">
-									<label>Length (cm)</label>
-								</div>
-								<div class="col-md-6 mb-3">
-									<input type="number" class="form-control" id="length" name="length"/>
-								</div>
+						<!--Category Form -->
+						<div class="form-row text-center">
+							<div class="col-md-3 mb-3">
+								<label>Length (cm)</label>
 							</div>
-							<div class="form-row text-center">
-								<div class="col-md-3 mb-3">
-									<label>Width (cm)</label>
-								</div>
-								<!-- (Length x Width x Height) / 5000 -->
-								<div class="col-md-6 mb-3">
-									<input type="number" class="form-control" id="width" name="width"/>
-								</div>
+							<div class="col-md-6 mb-3">
+								<input type="number" class="form-control" id="length"
+									name="length" />
 							</div>
-							<div class="form-row text-center">
-								<div class="col-md-3 mb-3">
-									<label>Height (cm)</label>
-								</div>
-								<div class="col-md-6 mb-3">
-									<input type="number" class="form-control" id="height" name="height"/>
-								</div>
+						</div>
+						<div class="form-row text-center">
+							<div class="col-md-3 mb-3">
+								<label>Width (cm)</label>
 							</div>
-							<div class="form-row">
-								<div class="col-md-3 mb-3"></div>
-								<div class="col-md-6 mb-3">
-								<button type="button" id="btnSave" class="form-control btn-success">Save</button>
-								</div>
+							<!-- (Length x Width x Height) / 5000 -->
+							<div class="col-md-6 mb-3">
+								<input type="number" class="form-control" id="width"
+									name="width" />
 							</div>
+						</div>
+						<div class="form-row text-center">
+							<div class="col-md-3 mb-3">
+								<label>Height (cm)</label>
+							</div>
+							<div class="col-md-6 mb-3">
+								<input type="number" class="form-control" id="height"
+									name="height" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-3 mb-3"></div>
+							<div class="col-md-6 mb-3">
+								<button type="button" id="btnSave"
+									class="form-control btn-success">Save</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

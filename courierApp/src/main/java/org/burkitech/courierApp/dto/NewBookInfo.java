@@ -45,7 +45,7 @@ public class NewBookInfo {
 	private Long noOfPcs;// master
 	private Long handlingAmount;// master
 	private Long ped;// master
-	private Long dimensions;// master
+	private float dimensions;// master
 	private Long partnerAmount;// master
 	private Long octroi;// master
 	private Long chargeableWtt;// master
@@ -262,11 +262,11 @@ public class NewBookInfo {
 		this.ped = ped;
 	}
 
-	public Long getDimensions() {
+	public float getDimensions() {
 		return dimensions;
 	}
 
-	public void setDimensions(Long dimensions) {
+	public void setDimensions(float dimensions) {
 		this.dimensions = dimensions;
 	}
 

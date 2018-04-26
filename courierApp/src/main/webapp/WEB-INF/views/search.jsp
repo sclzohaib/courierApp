@@ -5,9 +5,9 @@
 			"oracle");
 	Statement stmt = conn.createStatement();
 	
-	String consultant = request.getParameter("info").toString();
 	String action=request.getParameter("action").toString();
 	if(action.equals("origin")){
+		String consultant = request.getParameter("info").toString();
 		try {
 			ResultSet rs = stmt.executeQuery(
 					"select DESCRIPTION from CS_CITY where CITY_NO = '"
@@ -23,8 +23,9 @@
 			}
 		
 	}
-	else{
+	else if(action.equals("cnsg")){		
 			try {
+				String consultant = request.getParameter("info").toString();
 		ResultSet rs = stmt.executeQuery(
 				"select CNSGPHONE,CNSGNAME,CNSGCOMPANY,CNSGADDRESS from new_book_info where CNSGPHONE = '"
 						+ consultant + "'");
@@ -44,4 +45,22 @@
 			System.out.println(e);
 		}
 	}
+	else if(action.equals("service")){		
+		try {
+			String product = request.getParameter("product").toString();
+			String service = request.getParameter("service").toString();
+			String payment = request.getParameter("payment").toString();
+	ResultSet rs = stmt.executeQuery(
+			"select charges from cs_rate_card where pay_id = '"
+					+ payment + "'" + " and prod_id ='" + product + "'"+ " service_code ='" + service + "'");
+	while (rs.next()) {
+		String charges=rs.getString(1);
+		out.println("");
+		out.println(charges);
+		System.out.println("result  "+charges);
+	}
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+}
 	%>

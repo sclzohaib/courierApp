@@ -66,4 +66,26 @@ $('#btnSave').click(function() {
     $('#dimensions').val(dimension);
     $('#myDimensionModal').modal('hide');
   });
+
+$('#productId').change(serviceAmount);
+$('#serviceType').change(serviceAmount);
+$('#paymentMode').change(serviceAmount);
+function serviceAmount() {	
+    $.ajax({  	 
+        url: "search",
+        data: {
+        	action:'service',
+            product: $('#productId').val(),
+            service: $('#serviceType').val(),
+            payment: $('#paymentMode').val()
+        },
+        type: "GET",
+        success: function (data) { 
+            var array_data = String(data).split("\n");
+            $('#serviceAmount').val(array_data[2]);
+        },
+        error: function (data) {
+        }
+    })
+};
 });
