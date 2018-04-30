@@ -52,10 +52,10 @@
 			String payment = request.getParameter("payment").toString();
 	ResultSet rs = stmt.executeQuery(
 			"select charges from cs_rate_card where pay_id = '"
-					+ payment + "'" + " and prod_id ='" + product + "'"+ " service_code ='" + service + "'");
+					+ payment + "'" + " and prod_id ='" + product + "'"+ " and service_code ='" + service + "'");
 	while (rs.next()) {
-		String charges=rs.getString(1);
-		out.println("");
+		long charges=rs.getLong(1);
+		out.println(0);
 		out.println(charges);
 		System.out.println("result  "+charges);
 		//

@@ -28,14 +28,14 @@
 			<div class="col-md-2 mb-3">
 				<label>Product</label>
 				<sf:select class="form-control" path="productId" id="productId">
-					<option value=0>--Select Product--</option>
+					<option value=0>-- Select Product --</option>
 					<sf:options items="${products}" itemLabel="description"
 						itemValue="id" />
 				</sf:select>
 			</div>
 			<div class="col-md-3 mb-3">
 				<label>Consignment/AWB No</label>
-				<sf:input type="text" min="0" class="form-control" id="cnsgNo"
+				<sf:input type="number" class="form-control" id="cnsgNo"
 					path="cnsgNo" />
 			</div>
 			<div class="col-md-1 mb-3">
@@ -50,25 +50,26 @@
 					}, 1);
 				}
 			</script>
+
+			<div class="col-md-2 mb-3">
+				<label> </label>
+				<sf:input type="text" class="form-control" id="cityName"
+					path="cityName" disabled="true" placeholder="--Input Origin--" />
+			</div>
 			<div class="col-md-2 mb-3">
 				<label>Destination</label>
 				<sf:select class="form-control" id="dest" path="dest">
-					<option value=0>--Select City--</option>
+					<option value=0>-- Select City --</option>
 					<sf:options items="${cities}" itemLabel="description"
 						itemValue="cityNo" />
 				</sf:select>
 
 			</div>
 			<div class="col-md-2 mb-3">
-				<label> </label>
-				<sf:input type="text" class="form-control" id="cityName"
-					path="cityName" />
-			</div>
-			<div class="col-md-2 mb-3">
 				<label>Service Type</label>
 				<sf:select class="form-control" id="serviceType" path="serviceType">
 
-					<option value=0>--Select Service Type--</option>
+					<option value=0>-- Select Service Type --</option>
 					<sf:options items="${services}" itemLabel="description"
 						itemValue="serviceCode" />
 
@@ -184,7 +185,7 @@
 			<div class="col-md-3 mb-3">
 				<sf:select class="form-control" id="paymentMode" path="paymentMode">
 
-					<option value=0>--Select Payment Mode--</option>
+					<option value=0>-- Select Payment Mode --</option>
 					<sf:options items="${paymentModes}" itemLabel="description"
 						itemValue="payCode" />
 
@@ -195,7 +196,7 @@
 			</div>
 			<div class="col-md-2 mb-3">
 				<sf:input type="number" class="form-control" id="serviceAmount"
-					path="serviceAmount" />
+					name="serviceAmount" path="serviceAmount" disabled="true" />
 			</div>
 			<div class="col-md-1 mb-3">
 				<label>Gst</label>
@@ -290,7 +291,11 @@
 			</div>
 			<div class="col-md-3 mb-3">
 				<sf:select class="form-control" id="hanlingInstr"
-					path="hanlingInstr"></sf:select>
+					path="hanlingInstr">
+					<option value=0>-- Select Handling Instruction --</option>
+					<sf:options items="${handlInstr}" itemLabel="description"
+						itemValue="Id" />
+				</sf:select>
 			</div>
 			<div class="col-md-2 mb-3">
 				<label>Other Amount</label>
@@ -312,7 +317,12 @@
 				<label>Insurance Item Type</label>
 			</div>
 			<div class="col-md-3 mb-3">
-				<sf:select class="form-control" id="insItemType" path="insItemType"></sf:select>
+				<sf:select class="form-control" id="insItemType" path="insItemType">
+				<option value="">-- Select Insurance Type --</option>
+				<option value="1">Insurance Type 1</option>
+				<option value="2">Insurance Type 2</option>
+				<option value="3">Insurance Type 3</option>
+				</sf:select>
 			</div>
 			<div class="col-md-2 mb-3">
 				<label>Partner Comm</label>
@@ -334,8 +344,8 @@
 				<label>Insr. Declare Value</label>
 			</div>
 			<div class="col-md-3 mb-3">
-				<sf:select class="form-control" id="insDeclareValue"
-					path="insDeclareValue"></sf:select>
+				<sf:input type="number" class="form-control" id="insDeclareValue"
+					path="insDeclareValue"/>
 			</div>
 			<div class="col-md-2 mb-3">
 				<label>Disc Shipment</label>
@@ -348,10 +358,17 @@
 				<label>Total Payable</label>
 			</div>
 			<div class="col-md-1 mb-3">
-				<sf:input type="number" class="form-control" id="total" path="total" />
+				<sf:input type="number" class="form-control" id="total" path="total" disabled="true"/>
 			</div>
 		</div>
-		<button class="btn btn-primary" id="submit" type="submit">Submit</button>
+		<hr>
+		<div class="form-row">
+		<div class="col-md-5 mb-3"></div>
+		<div class="col-md-5 mb-3"></div>
+		<div class="col-md-2 mb-3">
+		<button class="form-control btn-primary" id="submit" type="submit">Submit</button>
+		</div>
+		</div>
 	</sf:form>
 	<div class="modal fade" id="myInfoModal" role="dialog">
 		<div class="modal-dialog" role="document">
@@ -365,8 +382,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!--Category Form -->
-
 				</div>
 			</div>
 		</div>
@@ -416,7 +431,8 @@
 						<div class="form-row">
 							<div class="col-md-3 mb-3"></div>
 							<div class="col-md-6 mb-3">
-								<button type="button" id="btnSave" class="form-control btn-success">Calculate</button>
+								<button type="button" id="btnSave"
+									class="form-control btn-success">Calculate</button>
 							</div>
 						</div>
 					</div>

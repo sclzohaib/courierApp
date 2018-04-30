@@ -1,7 +1,9 @@
 <nav
 	class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-	<div class="container">
-		<a class="navbar-brand" href="${contextRoot}/home">Burki Courier</a>
+	<div class="container pullDown">
+		<a class="navbar-brand" href="${contextRoot}/home"><img
+			src="${images}/favicon.ico" /></a> <a class="navbar-brand"
+			href="${contextRoot}/home">Burki Courier</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button"
 			data-toggle="collapse" data-target="#navbarResponsive"
 			aria-controls="navbarResponsive" aria-expanded="false"
@@ -77,47 +79,56 @@
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/manifest2">Book Detail</a></li>
 									<li class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/city2">City</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/city2">City</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/creditcard2">Credit Card</a></li>
 									<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/customer2">Customer</a>
 									<li><a class="dropdown-item"
-										href="${contextRoot}/pages/customer-tarrif2">Customer Tarrif</a></li>
+										href="${contextRoot}/pages/customer-tarrif2">Customer
+											Tarrif</a></li>
 									<li class="dropdown-divider"></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/hand-instr2">Hand Instr</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/int-sector2">Int Sector</a></li>
 									<li class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/item2">Item</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/item2">Item</a></li>
 								</ul>
 							</div>
 							<div class="col-sm-6">
 								<ul class="multi-column-dropdown">
-									<li><a class="dropdown-item" href="${contextRoot}/pages/items2">Items</a>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/items2">Items</a>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/payment-mode2">Payment Mode</a>
 									<li class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/product2">Product</a></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/sector2">Sector</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/product2">Product</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/sector2">Sector</a></li>
 									<li class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/service2">Service</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/service2">Service</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/oms-cnsg-ref2">Oms Cnsg Ref</a></li>
 									<li class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/route2">Route</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/route2">Route</a></li>
 									<li><a class="dropdown-item"
 										href="${contextRoot}/pages/rate-card2">Rate Card</a></li>
 									<li class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="${contextRoot}/pages/track2">Track</a></li>
+									<li><a class="dropdown-item"
+										href="${contextRoot}/pages/track2">Track</a></li>
 								</ul>
 							</div>
 						</div>
 					</ul></li>
 				<!-- Forms -->
-				<li cl ass="nav-item dropdown"><a
+				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownPortfolio" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false"> Forms </a>

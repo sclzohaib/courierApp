@@ -7,10 +7,12 @@ import javax.validation.Valid;
 
 import org.burkitech.courierApp.dao.BookInfoDAO;
 import org.burkitech.courierApp.dao.CityDAO;
+import org.burkitech.courierApp.dao.HandInstrDAO;
 import org.burkitech.courierApp.dao.PaymentModeDAO;
 import org.burkitech.courierApp.dao.ProductDAO;
 import org.burkitech.courierApp.dao.ServiceDAO;
 import org.burkitech.courierApp.dto.City;
+import org.burkitech.courierApp.dto.HandInstr;
 import org.burkitech.courierApp.dto.NewBookInfo;
 import org.burkitech.courierApp.dto.PaymentMode;
 import org.burkitech.courierApp.dto.Product;
@@ -38,6 +40,8 @@ public class NewPageController {
 	private ServiceDAO serviceDAO;
 	@Autowired
 	private PaymentModeDAO paymentModeDAO;
+	@Autowired
+	private HandInstrDAO handInstrDAO;
 
 	// ------------------------------------------------------------
 	// book info form
@@ -74,11 +78,6 @@ public class NewPageController {
 		return productDAO.productList();
 	}
 
-	@ModelAttribute("product")
-	public Product getProduct() {
-		return new Product();
-	}
-
 	// ---------------------------------------------------------------------------------
 	// returning cities for all request mapping
 	@ModelAttribute("cities")
@@ -86,32 +85,24 @@ public class NewPageController {
 		return cityDAO.cityList();
 	}
 
-	// @ModelAttribute("product")
-	// public Product getProduct() {
-	// return new Product();
-	// }
 	// ---------------------------------------------------------------------------------
-	// returning cities for all request mapping
+	// returning service types for all request mapping
 	@ModelAttribute("services")
 	public List<Service> getService() {
 		return serviceDAO.serviceList();
 	}
 
 	// ---------------------------------------------------------------------------------
-	// returning cities for all request mapping
+	// returning payment modes for all request mapping
 	@ModelAttribute("paymentModes")
 	public List<PaymentMode> getPaymentMode() {
 		return paymentModeDAO.paymentModeList();
 	}
 
 	// ---------------------------------------------------------------------------------
-	// handling dimensions
-	@RequestMapping(value = "/dimensions", method = RequestMethod.POST)
-	public String HandleDimensions(@RequestParam("length") long length, @RequestParam("width") long width,
-			@RequestParam("height") long height) {
-		long dim = (length * width * height) / 5000;
-		System.out.println(length + " " + width + " " + height + " " + dim);
-		return "redirect:/book-info?dim=" + dim;
+	// returning payment modes for all request mapping
+	@ModelAttribute("handlInstr")
+	public List<HandInstr> getHandlInstr() {
+		return handInstrDAO.handlInstrList();
 	}
-
 }

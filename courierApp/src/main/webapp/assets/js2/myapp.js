@@ -83,10 +83,39 @@ function serviceAmount() {
         type: "GET",
         success: function (data) { 
             var array_data = String(data).split("\n");
-            $('#serviceAmount').val(array_data[2]);
+            $('#serviceAmount').val(parseInt(array_data[2]));
+            $('#total').val($('#serviceAmount').val());
         },
         error: function (data) {
         }
     })
+};
+$('#gst').keyup(totalAmount);
+$('#handlingAmount').keyup(totalAmount);
+$('#ped').keyup(totalAmount);
+$('#partnerAmount').keyup(totalAmount);
+$('#octroi').keyup(totalAmount);
+$('#otsAmount').keyup(totalAmount);
+$('#fuelCharges').keyup(totalAmount);
+$('#otherAmount').keyup(totalAmount);
+$('#insPremium').keyup(totalAmount);
+$('#partnerComm').keyup(totalAmount);
+$('#customFees').keyup(totalAmount);
+$('#discShipment').keyup(totalAmount);
+function totalAmount() {
+    var total= Number($('#serviceAmount').val())+
+    Number($('#gst').val())+
+    Number($('#handlingAmount').val())+
+    Number($('#ped').val())+
+    Number($('#partnerAmount').val())+
+    Number($('#octroi').val())+
+    Number($('#otsAmount').val())+
+    Number($('#fuelCharges').val())+
+    Number($('#otherAmount').val())+
+    Number($('#insPremium').val())+
+    Number($('#partnerComm').val())+
+    Number($('#customFees').val())+
+    Number($('#discShipment').val());
+    $('#total').val(Number(total));
 };
 });

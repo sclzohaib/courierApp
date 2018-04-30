@@ -23,7 +23,7 @@ public class NewBookInfo {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date bkgDate; // master
 	private long productId;// master
-	private long cnsgNo;// detail
+	private Long cnsgNo;// detail
 	private String origin;// master
 	private String dest;// master
 	@Transient
@@ -45,7 +45,7 @@ public class NewBookInfo {
 	private Long noOfPcs;// master
 	private Long handlingAmount;// master
 	private Long ped;// master
-	private float dimensions;// master
+	private Float dimensions;// master
 	private Long partnerAmount;// master
 	private Long octroi;// master
 	private Long chargeableWtt;// master
@@ -60,7 +60,6 @@ public class NewBookInfo {
 	private String insDeclareValue;// master
 	private Long discShipment;// master
 	private Long total;// master
-
 	
 	public int getId() {
 		return id;
@@ -94,11 +93,11 @@ public class NewBookInfo {
 		this.productId = productId;
 	}
 
-	public long getCnsgNo() {
+	public Long getCnsgNo() {
 		return cnsgNo;
 	}
 
-	public void setCnsgNo(long cnsgNo) {
+	public void setCnsgNo(Long cnsgNo) {
 		this.cnsgNo = cnsgNo;
 	}
 
@@ -262,11 +261,11 @@ public class NewBookInfo {
 		this.ped = ped;
 	}
 
-	public float getDimensions() {
+	public Float getDimensions() {
 		return dimensions;
 	}
 
-	public void setDimensions(float dimensions) {
+	public void setDimensions(Float dimensions) {
 		this.dimensions = dimensions;
 	}
 
