@@ -67,6 +67,10 @@ hr {
 		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.fields-gap {
+	padding-left: 5px;
+}
+
 input[disabled] {
 	background-color: #ffffff !important;
 }
@@ -75,5 +79,32 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	{
 	-webkit-appearance: none;
 }
+
 .navbar {
-     padding: 0rem !important; 
+	padding: 0rem !important;
+}
+
+.table th, .table td {
+	padding: 0.25rem !important;
+	vertical-align: top;
+	border-top: 1px solid #dee2e6;
+}
+
+.btns{
+	margin:0.01rem;
+display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    border-radius: 0.4rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+ border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

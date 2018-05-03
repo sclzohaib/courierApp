@@ -33,7 +33,7 @@ public class City {
 	@Column(name = "HUB_NAME")
 	private String hubName;
 
-	@Column(name = "CONTATCT_PERSON")
+	@Column(name = "CONTACT_PERSON")
 	private String contactPerson;
 
 	@Column(name = "DESIG")
