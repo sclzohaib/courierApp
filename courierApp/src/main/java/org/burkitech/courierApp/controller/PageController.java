@@ -315,6 +315,7 @@ public class PageController {
 	public String addemployee(@Valid @ModelAttribute("employee") Employee mEmployee, BindingResult results, Model model,
 			HttpServletRequest request) {
 		if (results.hasErrors()) {
+			System.out.println(results.toString());
 			model.addAttribute("userClickEmployee", true);
 			model.addAttribute("title", "Employee");
 			return "page";
@@ -374,57 +375,57 @@ public class PageController {
 		return "redirect:/manifest_detail";
 	}
 
-	// ------------------------------------------------------------
-	// delivery form
-	// ------------------------------------------------------------
-	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
-	public ModelAndView delivery() {
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Delivery");
-		mv.addObject("userClickDelivery", true);
-		Delivery nDelivery = new Delivery();
-		mv.addObject("delivery", nDelivery);
-		return mv;
-
-	}
-
-	@RequestMapping(value = "/delivery", method = RequestMethod.POST)
-	public String addDelivery(@Valid @ModelAttribute("delivery") Delivery mDelivery, BindingResult results, Model model,
-			HttpServletRequest request) {
-		if (results.hasErrors()) {
-			model.addAttribute("userClickDeliveryDetail", true);
-			model.addAttribute("title", "Delivery Detail");
-			return "page";
-		}
-		// deliveryDAO.add(mDelivery);
-		return "redirect:/delivery-detail";
-	}
+//	// ------------------------------------------------------------
+//	// delivery form
+//	// ------------------------------------------------------------
+//	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
+//	public ModelAndView delivery() {
+//		ModelAndView mv = new ModelAndView("page");
+//		mv.addObject("title", "Delivery");
+//		mv.addObject("userClickDelivery", true);
+//		Delivery nDelivery = new Delivery();
+//		mv.addObject("delivery", nDelivery);
+//		return mv;
+//
+//	}
+//
+//	@RequestMapping(value = "/delivery", method = RequestMethod.POST)
+//	public String addDelivery(@Valid @ModelAttribute("delivery") Delivery mDelivery, BindingResult results, Model model,
+//			HttpServletRequest request) {
+//		if (results.hasErrors()) {
+//			model.addAttribute("userClickDeliveryDetail", true);
+//			model.addAttribute("title", "Delivery Detail");
+//			return "page";
+//		}
+//		// deliveryDAO.add(mDelivery);
+//		return "redirect:/delivery-detail";
+//	}
 
 	// ------------------------------------------------------------
 	// delivery detail form
 	// ------------------------------------------------------------
-	@RequestMapping(value = "/delivery-detail", method = RequestMethod.GET)
-	public ModelAndView deliveryDetail() {
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Delivery Detail");
-		mv.addObject("userClickDeliveryDetail", true);
-		DeliveryDetail nDeliveryDetail = new DeliveryDetail();
-		mv.addObject("deliveryDetail", nDeliveryDetail);
-		return mv;
-
-	}
-
-	@RequestMapping(value = "/delivery-detail", method = RequestMethod.POST)
-	public String addDeliveryDetail(@Valid @ModelAttribute("deliveryDetail") DeliveryDetail mDeliveryDetail,
-			BindingResult results, Model model, HttpServletRequest request) {
-		if (results.hasErrors()) {
-			model.addAttribute("userClickDeliveryDetail", true);
-			model.addAttribute("title", "Delivery Detail");
-			return "page";
-		}
-		deliveryDAO.addDetail(mDeliveryDetail);
-		return "redirect:/delivery-detail";
-	}
+//	@RequestMapping(value = "/delivery-detail", method = RequestMethod.GET)
+//	public ModelAndView deliveryDetail() {
+//		ModelAndView mv = new ModelAndView("page");
+//		mv.addObject("title", "Delivery Detail");
+//		mv.addObject("userClickDeliveryDetail", true);
+//		DeliveryDetail nDeliveryDetail = new DeliveryDetail();
+//		mv.addObject("deliveryDetail", nDeliveryDetail);
+//		return mv;
+//
+//	}
+//
+//	@RequestMapping(value = "/delivery-detail", method = RequestMethod.POST)
+//	public String addDeliveryDetail(@Valid @ModelAttribute("deliveryDetail") DeliveryDetail mDeliveryDetail,
+//			BindingResult results, Model model, HttpServletRequest request) {
+//		if (results.hasErrors()) {
+//			model.addAttribute("userClickDeliveryDetail", true);
+//			model.addAttribute("title", "Delivery Detail");
+//			return "page";
+//		}
+//		deliveryDAO.addDetail(mDeliveryDetail);
+//		return "redirect:/delivery-detail";
+//	}
 
 	// // ------------------------------------------------------------
 	// // book info form

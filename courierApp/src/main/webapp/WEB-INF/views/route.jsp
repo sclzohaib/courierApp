@@ -20,7 +20,7 @@
 		<div class="form-row">
 			<div class="col-md-3 mb-3">
 				<label for="rutNo">Route No</label>
-				<sf:input type="text" class="form-control" id="rutNo" path="rutNo" />
+				<sf:input type="number" class="form-control" id="rutNo" path="rutNo" />
 			</div>
 			<div class="col-md-3 mb-3">
 				<label for="dscrp">Description</label>

@@ -7,15 +7,21 @@ import javax.validation.Valid;
 
 import org.burkitech.courierApp.dao.BookInfoDAO;
 import org.burkitech.courierApp.dao.CityDAO;
+import org.burkitech.courierApp.dao.DeliveryDAO;
+import org.burkitech.courierApp.dao.EmployeeDAO;
 import org.burkitech.courierApp.dao.HandInstrDAO;
 import org.burkitech.courierApp.dao.PaymentModeDAO;
 import org.burkitech.courierApp.dao.ProductDAO;
+import org.burkitech.courierApp.dao.RouteDAO;
 import org.burkitech.courierApp.dao.ServiceDAO;
 import org.burkitech.courierApp.dto.City;
+import org.burkitech.courierApp.dto.Delivery;
 import org.burkitech.courierApp.dto.HandInstr;
 import org.burkitech.courierApp.dto.NewBookInfo;
+import org.burkitech.courierApp.dto.NewDelivery;
 import org.burkitech.courierApp.dto.PaymentMode;
 import org.burkitech.courierApp.dto.Product;
+import org.burkitech.courierApp.dto.Route;
 import org.burkitech.courierApp.dto.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,7 +39,6 @@ public class NewPageController {
 	private BookInfoDAO bookInfoDAO;
 	@Autowired
 	private ProductDAO productDAO;
-
 	@Autowired
 	private CityDAO cityDAO;
 	@Autowired
@@ -42,7 +47,12 @@ public class NewPageController {
 	private PaymentModeDAO paymentModeDAO;
 	@Autowired
 	private HandInstrDAO handInstrDAO;
-
+	@Autowired
+	private DeliveryDAO deliveryDAO;
+	@Autowired
+	private RouteDAO routeDAO;
+	@Autowired
+	private EmployeeDAO employeeDAO;
 	// ------------------------------------------------------------
 	// book info form
 	// ------------------------------------------------------------
@@ -69,6 +79,33 @@ public class NewPageController {
 		}
 		bookInfoDAO.add(mBookInfo);
 		return "redirect:/book-info";
+	}
+
+	// ------------------------------------------------------------
+	// delivery form
+	// ------------------------------------------------------------
+	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
+	public ModelAndView delivery() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Delivery");
+		mv.addObject("userClickDelivery", true);
+		NewDelivery nDelivery = new NewDelivery();
+		mv.addObject("delivery", nDelivery);
+		return mv;
+
+	}
+
+	@RequestMapping(value = "/delivery", method = RequestMethod.POST)
+	public String addDelivery(@Valid @ModelAttribute("delivery") NewDelivery mDelivery, BindingResult results, Model model,
+			HttpServletRequest request) {
+		if (results.hasErrors()) {
+			System.out.println(results.toString());
+			model.addAttribute("userClickDelivery", true);
+			model.addAttribute("title", "Delivery");
+			return "page";
+		}
+		 deliveryDAO.add(mDelivery);
+		return "redirect:/delivery";
 	}
 
 	// ---------------------------------------------------------------------------------
@@ -105,4 +142,16 @@ public class NewPageController {
 	public List<HandInstr> getHandlInstr() {
 		return handInstrDAO.handlInstrList();
 	}
+	// ---------------------------------------------------------------------------------
+		// returning routes modes for all request mapping
+		@ModelAttribute("routes")
+		public List<Route> getRoute() {
+			return routeDAO.routeList();
+		}
+		// ---------------------------------------------------------------------------------
+				// returning employees modes for all request mapping
+				@ModelAttribute("employees")
+				public List<Route> getEmployee() {
+					return employeeDAO.employeeList();
+				}
 }

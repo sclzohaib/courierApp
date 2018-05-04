@@ -11,7 +11,7 @@ public class Route {
 
 	@Id
 	@Column(name = "RUT_NO")
-	private String rutNo;
+	private int rutNo;
 
 	@Column(name = "DSCRP")
 	private String dscrp;
@@ -43,11 +43,11 @@ public class Route {
 	@Column(name = "SALE_TRTY")
 	private String saleTrty;
 
-	public String getRutNo() {
+	public int getRutNo() {
 		return rutNo;
 	}
 
-	public void setRutNo(String rutNo) {
+	public void setRutNo(int rutNo) {
 		this.rutNo = rutNo;
 	}
 

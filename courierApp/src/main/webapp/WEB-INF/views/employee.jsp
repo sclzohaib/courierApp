@@ -19,7 +19,7 @@
 		<div class="form-row">
 			<div class="col-md-2 mb-3">
 				<label for="id">ID</label>
-				<sf:input type="text" class="form-control" id="id" path="id" />
+				<sf:input type="number" class="form-control" id="id" path="id" />
 			</div>
 		</div>
 

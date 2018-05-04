@@ -123,17 +123,18 @@ $(document).ready(function(){
     var i=1;
    $("#add_row").click(function(){
     $('#addr'+i).html("<td>"+ (i+1) +"</td>" +
-    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  /> </td>" +
-    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md'></td>" +	
-    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  /> </td>" +
-    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md'></td>" +
-    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  /> </td>" +
-    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md'></td>" +
-    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  /> </td>" +
-    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md'></td>" +
-    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  /> </td>" +
-    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md'></td>" +
-    		"<td><input  name='mobile"+i+"' type='text'  class='form-control input-md'></td>");
+    		"<td><input name='name"+i+"' type='text' class='form-control input-md' value='"+$('#pgNo').val()+"' disabled/> </td>" +
+    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md' disabled></td>" +	
+    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  disabled/> </td>" +
+    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md' disabled></td>" +
+    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  disabled/> </td>" +
+    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md' disabled></td>" +
+    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  disabled/> </td>" +
+    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md' disabled></td>" +
+    		"<td><input name='name"+i+"' type='text' class='form-control input-md'  disabled/> </td>" +
+    		"<td><input  name='mail"+i+"' type='text'  class='form-control input-md' disabled></td>" +
+    		"<td><input  name='mobile"+i+"' type='text'  class='form-control input-md' disabled></td>"+
+    		"<td><button  name='mobile"+i+"' class='form-control'>"+'Edit'+"</button></td>");
     $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
     i++; 
 });
